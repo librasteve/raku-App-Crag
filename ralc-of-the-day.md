@@ -3,6 +3,5 @@ Here are some ralcs to plunder for a ralc-of-the-day generator:
 ```
 ralc 'my \t=♎️<22:04:22>; say t.in: <millisecs>'
 ralc 'say ♓️<43°30′30″M>'
-
-
+ralc 'my \w=2m; my \l=2.3m ±4%; say w*l'
 ```
