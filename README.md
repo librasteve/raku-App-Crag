@@ -11,7 +11,7 @@ zef install --verbose App::Ralc
 
 ## Usage
 ```raku
-./ralc [--help] <cmd>
+ralc [--help] <cmd>
 ```
 
 ## Examples
