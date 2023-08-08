@@ -1,0 +1,30 @@
+{
+  "name": "App:Racl",
+  "description": "raku calculator for the command line",
+  "version": "0.0.1",
+  "perl": "6.d",
+  "authors": [
+    "librasteve"
+  ],
+  "auth": "zef:librasteve",
+  "depends": [
+    "Physics::Measure",
+    "Physics::Constants",
+    "Physics::Navigation"
+  ],
+  "build-depends": [],
+  "test-depends": [],
+  "provides": {
+    "App::Racl": "bin/racl"
+  },
+  "resources": [],
+  "license": "Artistic-2.0",
+  "tags": [
+    "App",
+    "CLI",
+    "Physics",
+    "Navigation"
+  ],
+  "api": "1",
+  "source-url": "git://github.com/librasteve/raku-App-Racl.git"
+}
