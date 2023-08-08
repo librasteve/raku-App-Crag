@@ -21,7 +21,8 @@ ralc [--help] <cmd>
 [3] > ralc 'say (♎️"12.5 ft ±3%").in: <mm>'                       #3810mm ±114.3
 [4] > ralc 'my \λ=2.5nm; my \ν=c/λ; say ν.norm'                   #119.916..PHz
 [5] > ralc 'my \x=♎️"37 °C"; my \y=♎️"98.6 °F"; say x cmp y'      #Same
-[6] > ralc 'say ♓️<80°T> + (♓️<43°30′30″M>).T'                    #124°ESE (T) 
+[6] > ralc 'say ♓️<80°T> + (♓️<43°30′30″M>).T'                    #124°ESE (T)
+[7] > ralc 'say @physics-constants-abbreviations.join: "\n"'       # ...
 ```
 
 ## More Info
