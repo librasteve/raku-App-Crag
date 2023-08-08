@@ -1,6 +1,7 @@
 #!/usr/bin/env raku
 
 use MONKEY-SEE-NO-EVAL;
+use App::Racl;
 
 sub MAIN(
     Str  $cmd?,
