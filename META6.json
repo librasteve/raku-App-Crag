@@ -1,5 +1,5 @@
 {
-  "name": "App:Racl",
+  "name": "App:Ralc",
   "description": "raku calculator for the command line",
   "version": "0.0.1",
   "perl": "6.d",
