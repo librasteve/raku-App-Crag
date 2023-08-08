@@ -4,6 +4,11 @@
 
 raku calculator for the command line
 
+## Install
+```
+zef install App:Ralc
+```
+
 ## Usage
 ```
 ./ralc [--help] <cmd>
