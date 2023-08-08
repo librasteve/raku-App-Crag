@@ -15,7 +15,7 @@
   "build-depends": [],
   "test-depends": [],
   "provides": {
-    "App::Racl": "bin/ralc"
+    "App::Ralc": "lib/App/Ralc.rakumod"
   },
   "resources": [],
   "license": "Artistic-2.0",
