@@ -5,17 +5,17 @@
 raku calculator for the command line
 
 ## Install
-```
+```raku
 zef install App::Ralc
 ```
 
 ## Usage
-```
+```raku
 ./ralc [--help] <cmd>
 ```
 
 ## Examples
-```
+```raku
 [1] > ralc 'say (1.6km / (60 * 60 * 1s)).in: <mph>'               #0.994194mph
 [2] > ralc 'my \m=95kg; my \a=♎️"9.81 m/s^2"; my \f=m*a; say f'   #931.95N
 [3] > ralc 'say (♎️"12.5 ft ±3%").in: <mm>'                       #3810mm ±114.3
