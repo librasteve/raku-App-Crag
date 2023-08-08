@@ -15,7 +15,7 @@
   "build-depends": [],
   "test-depends": [],
   "provides": {
-    "App::Racl": "bin/racl"
+    "App::Racl": "bin/ralc"
   },
   "resources": [],
   "license": "Artistic-2.0",
