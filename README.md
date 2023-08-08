@@ -6,7 +6,7 @@ raku calculator for the command line
 
 ## Install
 ```
-zef install App:Ralc
+zef install App::Ralc
 ```
 
 ## Usage
