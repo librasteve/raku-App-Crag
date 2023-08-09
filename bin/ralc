@@ -25,12 +25,17 @@ sub MAIN(
                 - https://github.com/librasteve/raku-Physics-Error.git
                 - https://github.com/librasteve/raku-Physics-Constants.git
                 - https://github.com/librasteve/raku-Physics-Navigation.git
+            NB: as a concession to convenience, ralc does .subst( ':<', '♎️<') 
             END
     } else {
+            my $new = $cmd;
+            $new ~~ s:g/':<'/♎️\</;
+            $new ~~ s:g/'|<'/♓️\</;
+            say $new;
         EVAL qq/ 
             use Physics::Constants;
             use Physics::Navigation;
             use Physics::Measure :ALL; 
-            $cmd/; 
+            $new/; 
     }
 }
