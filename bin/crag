@@ -16,7 +16,7 @@ sub MAIN(
                 [1] > crag 'say (1.6km / (60 * 60 * 1s)).in: <mph>'               #0.994194mph
                 [2] > crag '$m=95kg; $a=♎️<9.81 m/s^2>; $f=$m*$a; say $f'         #931.95N
                 [3] > crag 'say :<12.5 ft ±3%> .in: <mm>'                         #3810mm ±114.3
-                [4] > crag 'my \λ=2.5nm; my \ν=c/λ; say ν.norm'                   #119.916..PHz
+                [4] > crag '$λ=2.5nm; $ν=c/λ; say $ν.norm'                        #119.916..PHz
                 [5] > crag '$c=:<37 °C>; $f=:<98.6 °F>; say $f cmp $c'            #Same
                 [6] > crag 'say |<80°T> + |<43°30′30″M> .T'                       #124°ESE (T)
                 [7] > crag 'say @physics-constants-abbreviations.join: "\n"'      # ...
