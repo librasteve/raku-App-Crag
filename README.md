@@ -2,7 +2,7 @@
 
 # raku App::Crag
 
-raku calculator for the command line
+calculator using raku grammars for the command line
 
 ## Install
 ```raku
