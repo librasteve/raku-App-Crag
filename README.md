@@ -1,28 +1,28 @@
 [![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)
 
-# raku App::Ralc
+# raku App::Crag
 
 raku calculator for the command line
 
 ## Install
 ```raku
-zef install --verbose App::Ralc
+zef install --verbose App::Crag
 ```
 
 ## Usage
 ```raku
-ralc [--help] <cmd>
+crag [--help] <cmd>
 ```
 
 ## Examples
 ```raku
-[1] > ralc 'say (1.6km / (60 * 60 * 1s)).in: <mph>'               #0.994194mph
-[2] > ralc 'my \m=95kg; my \a=♎️<9.81 m/s^2>; my \f=m*a; say f'   #931.95N
-[3] > ralc 'say ♎️<12.5 ft ±3%> .in: <mm>'                        #3810mm ±114.3
-[4] > ralc 'my \λ=2.5nm; my \ν=c/λ; say ν.norm'                   #119.916..PHz
-[5] > ralc 'my \x=♎️<37 °C>; my \y=♎️<98.6 °F>; say x cmp y'      #Same
-[6] > ralc 'say ♓️<80°T> + ♓️<43°30′30″M> .T'                     #124°ESE (T)
-[7] > ralc 'say @physics-constants-abbreviations.join: "\n"'      # ...
+[1] > crag 'say (1.6km / (60 * 60 * 1s)).in: <mph>'               #0.994194mph
+[2] > crag 'my \m=95kg; my \a=♎️<9.81 m/s^2>; my \f=m*a; say f'   #931.95N
+[3] > crag 'say :<12.5 ft ±3%> .in: <mm>'                         #3810mm ±114.3
+[4] > crag 'my \λ=2.5nm; my \ν=c/λ; say ν.norm'                   #119.916..PHz
+[5] > crag 'my \x=:<37 °C>; my \y=:<98.6 °F>; say x cmp y'        #Same
+[6] > crag 'say |<80°T> + |<43°30′30″M> .T'                       #124°ESE (T)
+[7] > crag 'say @physics-constants-abbreviations.join: "\n"'      # ...
 ```
 
 ## More Info

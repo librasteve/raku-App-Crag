@@ -1,7 +1,7 @@
 {
-  "name": "App:Ralc",
-  "description": "raku calculator for the command line",
-  "version": "0.0.2",
+  "name": "App::Crag",
+  "description": "calculator using raku grammars",
+  "version": "0.0.3",
   "perl": "6.d",
   "authors": [
     "librasteve"
@@ -15,7 +15,7 @@
   "build-depends": [],
   "test-depends": [],
   "provides": {
-    "App::Ralc": "lib/App/Ralc.rakumod"
+    "App::Crag": "lib/App/Crag.rakumod"
   },
   "resources": [],
   "license": "Artistic-2.0",
@@ -26,5 +26,5 @@
     "Navigation"
   ],
   "api": "1",
-  "source-url": "git://github.com/librasteve/raku-App-Racl.git"
+  "source-url": "git://github.com/librasteve/raku-App-Crag.git"
 }
