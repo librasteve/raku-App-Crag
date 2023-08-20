@@ -3,6 +3,7 @@
 use MONKEY-SEE-NO-EVAL;
 use lib '../lib';
 use App::Crag;
+class Time {...};
 
 sub MAIN(
     Str  $cmd?,
