@@ -5,6 +5,19 @@ use lib '../lib';
 use App::Crag;
 class Time {...};
 
+use Physics::Constants;
+use Physics::Navigation;
+use Physics::Measure :ALL;
+
+$Physics::Measure::number-comma = ''; 
+            $Physics::Measure::round-val = 0.1;
+            
+            use Time::Duration::Parser;
+            
+            multi prefix:<♑️> ( Str:D $new )      { Time.new( value => duration-to-seconds($new), units => 's') }
+            multi prefix:<♑️> ( Duration:D $new ) { Time.new( $new ) }
+
+
 sub MAIN(
     Str  $cmd?,
     Bool :$help = False,
@@ -36,18 +49,8 @@ sub MAIN(
             $new ~~ s:g/'|<'/♓️\</;
             $new ~~ s:g/'§<'/♑️\</;
         EVAL qq/
-            use Physics::Constants;
-            use Physics::Navigation;
-            use Physics::Measure :ALL;
 
-            $Physics::Measure::number-comma = ''; 
-            $Physics::Measure::round-val = 0.1;
             
-            use Time::Duration::Parser;
-            
-            multi prefix:<♑️> ( Str:D $new )      { Time.new( value => duration-to-seconds($new), units => 's') }
-            multi prefix:<♑️> ( Duration:D $new ) { Time.new( $new ) }
-
             no strict;
             $new/; 
     }
