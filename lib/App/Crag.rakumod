@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.4>:auth<Steve Roe (librasteve@furnival.net)>;
+unit module App::Crag:ver<0.0.5>:auth<Steve Roe (librasteve@furnival.net)>;
 
 $Physics::Measure::number-comma = ''; 
 $Physics::Measure::round-val = 0.1;
