@@ -26,16 +26,27 @@ sub MAIN(
                 - https://github.com/librasteve/raku-Physics-Error.git
                 - https://github.com/librasteve/raku-Physics-Constants.git
                 - https://github.com/librasteve/raku-Physics-Navigation.git
-            NB: as a concession to laziness, crag swaps ':<' to '♎️<' and ':|' to '♓️<'  
+                - https://github.com/raku-community-modules/Time-Duration-Parser
+            NB: as a concession to laziness, crag swaps ':<' to '♎️<', '|<' to '♓️<' and '§<' to '♑️<'
             END
     } else {
             my $new = $cmd;
             $new ~~ s:g/':<'/♎️\</;
             $new ~~ s:g/'|<'/♓️\</;
-        EVAL qq/ 
+            $new ~~ s:g/'§<'/♑️\</;
+        EVAL qq/
             use Physics::Constants;
             use Physics::Navigation;
-            use Physics::Measure :ALL; 
+            use Physics::Measure :ALL;
+
+            $Physics::Measure::number-comma = ''; 
+            $Physics::Measure::round-val = 0.1;
+            
+            use Time::Duration::Parser;
+            
+            multi prefix:<♑️> ( Str:D $new )      { Time.new( value => duration-to-seconds($new), units => 's') }
+            multi prefix:<♑️> ( Duration:D $new ) { Time.new( $new ) }
+
             no strict;
             $new/; 
     }
