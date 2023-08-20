@@ -31,6 +31,7 @@ crag [--help] <cmd>
 - https://github.com/librasteve/raku-Physics-Error.git
 - https://github.com/librasteve/raku-Physics-Constants.git
 - https://github.com/librasteve/raku-Physics-Navigation.git
+- https://github.com/raku-community-modules/Time-Duration-Parser
 
 ### Copyright
 copyright(c) 2023 Henley Cloud Consulting Ltd.
