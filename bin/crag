@@ -1,6 +1,5 @@
 #!/usr/bin/env raku
 
-use MONKEY-SEE-NO-EVAL;
 use lib '../lib';
 use App::Crag;
 
@@ -30,14 +29,6 @@ sub MAIN(
             NB: as a concession to laziness, crag swaps ':<' to '♎️<' and '|<' to '♓️<'
             END
     } else {
-            my $new = $cmd;
-            $new ~~ s:g/':<'/♎️\</;
-            $new ~~ s:g/'|<'/♓️\</;
-        EVAL qq/
-            use Physics::Constants;
-            use Physics::Navigation;
-            use Physics::Measure :ALL;
-            no strict;
-            $new/; 
+        eval-me($cmd);
     }
 }
