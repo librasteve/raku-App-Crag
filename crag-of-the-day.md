@@ -11,4 +11,6 @@ crag 'r(0.1); say (:<1676 km> / (^<12:38> - ^<10:22>)).in: <mph>'
 crag 'say "{2/0==1/0}, {1/0==0/0}"'
 crag 'r(0.01); say (1 / :<30 mpg>).in: <l/100km>'  #echo RAKULANG='en_US' for us gallons, pints, mpg
 crag 'r(0.01); $t=:<13.813 gigayears ±0.038>; say $t.rebase.norm'
+crag 'r(0.01); $t=:<13.813 gigayears>; $d = c * $t; say $d.norm'
+crag 'r(0.01); $t=:<13.813 gigayears>; $d = c * $t; say $d.in: "parsec"'
 ```
