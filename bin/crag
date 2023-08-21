@@ -18,7 +18,8 @@ sub MAIN(
                 [4] > crag '$λ=2.5nm; $ν=c/$λ; say $ν.norm'                       #119.916..PHz
                 [5] > crag '$c=:<37 °C>; $f=:<98.6 °F>; say $f cmp $c'            #Same
                 [6] > crag 'say |<80°T> + |<43°30′30″M> .T'                       #124°ESE (T)
-                [7] > crag 'say @physics-constants-abbreviations.join: "\n"'      # ...
+                [7] > crag 'say ♑️<5 days 4 hours 52 minutes>'                    #124:52:00
+                [8] > crag 'say @physics-constants-abbreviations.join: "\n"'      # ...
             More info:
                 - https://github.com/librasteve/raku-Physics-Measure.git
                 - https://github.com/librasteve/raku-Physics-Unit.git
@@ -26,7 +27,7 @@ sub MAIN(
                 - https://github.com/librasteve/raku-Physics-Constants.git
                 - https://github.com/librasteve/raku-Physics-Navigation.git
                 - https://github.com/raku-community-modules/Time-Duration-Parser
-            NB: as a concession to laziness, crag swaps ':<' to '♎️<' and '|<' to '♓️<'
+            NB: crag goes subst( ':<' => '♎️<', '|<' => '♓️<', '^<' => '♑️<' ) 
             END
     } else {
         eval-me($cmd);
