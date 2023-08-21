@@ -9,5 +9,5 @@ crag 'say e ** (i * π) =~= -1'
 crag '$d=7cm ±3%; say π * $d'
 crag 'r(0.1); say (:<1676 km> / (^<12:38> - ^<10:22>)).in: <mph>'
 crag 'say "{2/0==1/0}, {1/0==0/0}"'
-crag 'say (1 / :<30 mpg>).in: <l/100km>'
+crag 'r(0.01); say (1 / :<30 mpg>).in: <l/100km>'  #echo RAKULANG='en_US' for us gallpns, pints
 ```
