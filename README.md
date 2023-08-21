@@ -22,8 +22,11 @@ crag [--help] <cmd>
 [4] > crag '$λ=2.5nm; $ν=c/$λ; say ν.norm'                        #119.916..PHz
 [5] > crag '$c=:<37 °C>; $f=:<98.6 °F>; say $f cmp $c'            #Same
 [6] > crag 'say |<80°T> + |<43°30′30″M> .T'                       #124°ESE (T)
-[7] > crag 'say @physics-constants-abbreviations.join: "\n"'      # ...
+[7] > crag 'say ♑️<5 days 4 hours 52 minutes>'                    #124:52:00
+[8] > crag 'say @physics-constants-abbreviations.join: "\n"'      # ...
 ```
+NB: crag goes subst( ':<' => '♎️<', '|<' => '♓️<', '^<' => '♑️<' )
+NB: crag goes sub r( $x ) { $Physics::Measure::round-val = $x; }set
 
 ## More Info
 - https://github.com/librasteve/raku-Physics-Measure.git
@@ -31,6 +34,7 @@ crag [--help] <cmd>
 - https://github.com/librasteve/raku-Physics-Error.git
 - https://github.com/librasteve/raku-Physics-Constants.git
 - https://github.com/librasteve/raku-Physics-Navigation.git
+- https://github.com/raku-community-modules/Time-Duration-Parser
 - https://github.com/raku-community-modules/Time-Duration-Parser
 
 ### Copyright
