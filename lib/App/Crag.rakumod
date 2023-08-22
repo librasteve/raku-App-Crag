@@ -27,6 +27,7 @@ sub eval-me( $cmd ) is export {
     my $settings = q/
         $Physics::Measure::number-comma = '';
 
+        $Physics::Measure::round-val = 0.01;
         sub r( $x ) { $Physics::Measure::round-val = $x; }
     /;
 
