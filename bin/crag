@@ -27,8 +27,9 @@ sub MAIN(
                 - https://github.com/librasteve/raku-Physics-Constants.git
                 - https://github.com/librasteve/raku-Physics-Navigation.git
                 - https://github.com/raku-community-modules/Time-Duration-Parser
-            NB: crag goes subst( ':<' => '♎️<', '|<' => '♓️<', '^<' => '♑️<' ) 
-            NB: crag goes sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }
+            - crag goes subst( ':<' => '♎️<', '|<' => '♓️<', '^<' => '♑️<' ) 
+            - crag goes sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }
+            - echo RAKULANG='en_US' for us gallons, pints, mpg, etc.
             END
     } else {
         eval-me($cmd);
