@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.6>:auth<Steve Roe (librasteve@furnival.net)>;
+unit module App::Crag:ver<0.0.7>:auth<Steve Roe (librasteve@furnival.net)>;
 
 use MONKEY-SEE-NO-EVAL;
 
@@ -27,6 +27,7 @@ sub eval-me( $cmd ) is export {
     my $settings = q/
         $Physics::Measure::number-comma = '';
 
+        $Physics::Measure::round-val = 0.01;
         sub r( $x ) { $Physics::Measure::round-val = $x; }
     /;
 
