@@ -25,8 +25,9 @@ crag [--help] <cmd>
 [7] > crag 'say ♑️<5 days 4 hours 52 minutes>'                    #124:52:00
 [8] > crag 'say @physics-constants-abbreviations.join: "\n"'      # ...
 ```
-- NB: crag goes subst( ':<' => '♎️<', '|<' => '♓️<', '^<' => '♑️<' )
-- NB: crag goes sub r( $x ) { $Physics::Measure::round-val = $x; }set
+- crag goes ```subst( ':<' => '♎️<', '|<' => '♓️<', '^<' => '♑️<' )``` 
+- crag goes ```sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }```
+- ```echo RAKULANG='en_US'``` for us gallons, pints, mpg, etc.
 
 ## More Info
 - https://github.com/librasteve/raku-Physics-Measure.git
