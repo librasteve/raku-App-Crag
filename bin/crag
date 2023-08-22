@@ -28,7 +28,7 @@ sub MAIN(
                 - https://github.com/librasteve/raku-Physics-Navigation.git
                 - https://github.com/raku-community-modules/Time-Duration-Parser
             NB: crag goes subst( ':<' => '♎️<', '|<' => '♓️<', '^<' => '♑️<' ) 
-            NB: crag goes sub r( $x ) { $Physics::Measure::round-val = $x; }
+            NB: crag goes sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }
             END
     } else {
         eval-me($cmd);
