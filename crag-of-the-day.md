@@ -10,6 +10,6 @@ crag '$d=7cm ±3%; say π * $d'
 crag 'say (:<1676 km> / (^<12:38> - ^<10:22>)).in: <mph>'
 crag 'say "{2/0==1/0}, {1/0==0/0}"'
 crag 'say (1 / :<30 mpg>).in: <l/100km>'
-crag '{say "{.norm}, {.in: <megaparsec>}"}(c * :<13.8 gigayears>)'
+crag 'say (c * :<13.8 gigayears>).in: <megaparsec>'
 crag 'say :<13.8 bn years> .rebase.norm'
 ```
