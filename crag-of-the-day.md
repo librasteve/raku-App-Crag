@@ -12,4 +12,8 @@ crag 'say "{2/0==1/0}, {1/0==0/0}"'
 crag 'say (1 / :<30 mpg>).in: <l/100km>'
 crag 'say (c * :<13.8 gigayears>).in: <megaparsec>'
 crag 'say :<13.8 bn years> .rebase.norm'
+crag '$h=450;$w=1520;$d=2315;$v=$h*$w*$d; say (♎️"$v cubic millimetre").in: <cords>'    #hilux load 0.44cord
+crag '$h=69;$w=31+21;$d=21+43;$v=$h*$w*$d; say (♎️"$v cu in").in: <cords>'      #my logpile
+crag 'say :<1.04 cord> * :<500 kg/m^3>'
+crag 'say (:<1884 kg> * :<16 MJ/kg>).in: <kWh>'
 ```
