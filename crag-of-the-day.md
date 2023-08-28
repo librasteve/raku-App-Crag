@@ -17,6 +17,4 @@ crag '$h=69;$w=31+21;$d=21+43;$v=$h*$w*$d; say (♎️"$v cu in").in: <cords>'  
 crag 'say :<1.04 cord> * :<500 kg/m^3>'
 crag 'say (:<1884 kg> * :<16 MJ/kg>).in: <kWh>'
 crag 'r(0); say :<1 Dalton> .rebase'
-crag 'say ♎️"{molecular-mass(<H2SO4>)} Daltons" ' 
-crag 'r(0); say ( ♎️"{molecular-mass(<C>) * 23000} u" ).in: <μg>' 
 ```
