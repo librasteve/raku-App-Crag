@@ -46,6 +46,7 @@ sub eval-me( $cmd ) is export {
         use Physics::Constants;
         use Physics::Navigation;
         use Physics::Measure :ALL;
+        use Chemistry::Stoichiometry;
         no strict;
         $new/;
 

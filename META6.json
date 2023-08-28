@@ -11,6 +11,7 @@
     "Physics::Measure",
     "Physics::Constants",
     "Physics::Navigation",
+    "Chemistry::Stoichiometry",
     "Time::Duration::Parser"
   ],
   "build-depends": [],
