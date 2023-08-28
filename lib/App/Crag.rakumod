@@ -42,6 +42,7 @@ sub eval-me( $cmd ) is export {
     multi prefix:<♑️> ( List:D $new ) { capricorn( $new) }
 
     EVAL qq/
+        use Physics::Unit;
         use Physics::Constants;
         use Physics::Navigation;
         use Physics::Measure :ALL;
