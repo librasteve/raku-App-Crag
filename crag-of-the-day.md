@@ -18,6 +18,6 @@ crag 'say :<1.04 cord> * :<500 kg/m^3>'
 crag 'say (:<1884 kg> * :<16 MJ/kg>).in: <kWh>'
 crag 'r(0); say :<1 Dalton> .rebase'
 crag 'say π²'
-crag '$body-temp = 36.8°C; say "Healthy" if $body-temp == 36.6°C ± 3%;'
+crag '$body-temp = 36.8°C; say "Healthy" if $body-temp == 36.6°C ± 3%'
 crag 'say "Voltage is {20A * 10kΩ}"'
 ```
