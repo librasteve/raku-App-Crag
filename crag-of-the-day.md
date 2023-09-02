@@ -20,4 +20,6 @@ crag 'r(0); say :<1 Dalton> .rebase'
 crag 'say π²'
 crag '$body-temp = 36.8°C; say "Healthy" if $body-temp == 36.6°C ± 3%'
 crag 'say "Voltage is {20A * 10kΩ}"'
+crag '$x = <௪௨>, say "$x is Tamil for {+$x}." '
+crag 'say :<௪௨ mph>'
 ```
