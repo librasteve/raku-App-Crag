@@ -23,4 +23,5 @@ crag 'say "Voltage is {20A * 10kΩ}"'
 crag '$x = <௪௨>, say "$x is Tamil for {+$x}." '
 crag 'say :<௪௨ mph>'
 crag '"#ffffff".subst("#").comb(/(..)/).map({:16($_)}).say'
+crag '$fr-max=:<4 W/kg>; $iphone12=:<5.74 W/kg>; say "stop sales" if $iphone12 > $fr-max'
 ```
