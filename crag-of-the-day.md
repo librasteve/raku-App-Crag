@@ -25,4 +25,5 @@ crag 'say :<௪௨ mph>'
 crag '"#ffffff".subst("#").comb(/(..)/).map({:16($_)}).say'
 crag '$fr-max=:<4 W/kg>; $iphone12=:<5.74 W/kg>; say "stop sales in fr" if $iphone12 > $fr-max'
 crag '$tub=(1.4m * .5m * .3m); $tap=:<20 L/min>; say $tub/$tap'
+crag 'r(0); say "boltzmann-constant is: ", k'
 ```
