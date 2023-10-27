@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.11>:auth<Steve Roe (librasteve@furnival.net)>;
+unit module App::Crag:ver<0.0.12>:auth<Steve Roe (librasteve@furnival.net)>;
 
 use MONKEY-SEE-NO-EVAL;
 
@@ -46,8 +46,8 @@ sub eval-me( $cmd ) is export {
         use Physics::Constants;
         use Physics::Navigation;
         use Physics::Measure :ALL;
+        use Slang::Roman;
         no strict;
         $new/;
-
 }
 

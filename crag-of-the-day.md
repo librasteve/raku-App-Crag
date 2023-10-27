@@ -26,4 +26,8 @@ crag '"#ffffff".subst("#").comb(/(..)/).map({:16($_)}).say'
 crag '$fr-max=:<4 W/kg>; $iphone12=:<5.74 W/kg>; say "stop sales in fr" if $iphone12 > $fr-max'
 crag '$tub=(1.4m * .5m * .3m); $tap=:<20 L/min>; say $tub/$tap'
 crag 'r(0); say "boltzmann-constant is: ", k'
+crag 'say (0rXXIII + 0rMM).&to-roman'
+crag '$circus-maximus-lap = :<2000 ft>; $laps = 7; say $circus-maximus-lap * $laps;' 
+crag '$chariot-speed = :<40 mph>; $race-distance = :<14000 ft>; say $race-distance / $chariot-speed;'
+crag '$s=Speed.new(value=>0rXL,units=>"mph"); $d=Distance.new(value=>0rMM,units=>"ft"); say "lap-time {$d/$s}"'
 ```
