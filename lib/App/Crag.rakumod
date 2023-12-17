@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.12>:auth<Steve Roe (librasteve@furnival.net)>;
+unit module App::Crag:ver<0.0.13>:auth<Steve Roe (librasteve@furnival.net)>;
 
 use MONKEY-SEE-NO-EVAL;
 
@@ -29,6 +29,8 @@ sub eval-me( $cmd ) is export {
 
         $Physics::Measure::round-val = 0.01;
         sub r( $x ) { $Physics::Measure::round-val = $x; }
+
+        sub pos(\a,\b) {Position.new: a,b}
     /;
 
     my $new = $cmd;
@@ -48,6 +50,7 @@ sub eval-me( $cmd ) is export {
         use Physics::Measure :ALL;
         use Slang::Roman;
         no strict;
+
         $new/;
 }
 
