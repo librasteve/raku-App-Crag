@@ -1,7 +1,7 @@
 {
   "name": "App::Crag",
   "description": "calculator using raku grammars",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "perl": "6.d",
   "authors": [
     "librasteve"
@@ -12,7 +12,8 @@
     "Physics::Constants",
     "Physics::Navigation",
     "Time::Duration::Parser",
-    "Slang::Roman"
+    "Slang::Roman",
+    "Chemistry::Stoichiometry"
   ],
   "build-depends": [],
   "test-depends": [],

@@ -32,4 +32,6 @@ crag '$chariot-speed = :<40 mph>; $race-distance = :<14000 ft>; say $race-distan
 crag '$s=Speed.new(value=>0rXL,units=>"mph"); $d=Distance.new(value=>0rMM,units=>"ft"); say "lap-time {$d/$s}"'
 crag '$x = [+] <3 1/2>; $fd = ♎️"$x in"; say "Fits on a $fd floppy disk."'
 crag 'say 2**63-1'
+crag 'say molecular-mass("SO2")'
+crag "say chemical-element-data('Cl');"
 ```
