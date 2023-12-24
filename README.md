@@ -36,7 +36,8 @@ crag [--help] <cmd>
 - https://github.com/librasteve/raku-Physics-Constants.git
 - https://github.com/librasteve/raku-Physics-Navigation.git
 - https://github.com/raku-community-modules/Time-Duration-Parser
-- https://github.com/raku-community-modules/Time-Duration-Parser
+- https://github.com/raku-community-modules/Slang-Roman
+- https://github.com/antononcube/Raku-Chemistry-Stoichiometry
 
 ### Copyright
 copyright(c) 2023 Henley Cloud Consulting Ltd.

@@ -28,6 +28,7 @@ sub MAIN(
                 - https://github.com/librasteve/raku-Physics-Navigation.git
                 - https://github.com/raku-community-modules/Time-Duration-Parser
                 - https://github.com/raku-community-modules/Slang-Roman
+                - https://github.com/antononcube/Raku-Chemistry-Stoichiometry
             - crag goes subst( ':<' => '♎️<', '|<' => '♓️<', '^<' => '♑️<' )
             - crag goes sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }
             - echo RAKULANG='en_US' for us gallons, pints, mpg, etc.
