@@ -34,4 +34,7 @@ crag '$x = [+] <3 1/2>; $fd = ♎️"$x in"; say "Fits on a $fd floppy disk."'
 crag 'say 2**63-1'
 crag 'say molecular-mass("SO2")'
 crag "say chemical-element-data('Cl');"
+#https://tos.org/oceanography/article/is-the-atlantic-overturning-circulation-approaching-a-tipping-point
+crag 'say (50km * 0.5km * :<2 m/s>).in("sverdrup")'
+crag 'say (:<27 cubic hectometer per sec>).in("sverdrup")'
 ```
