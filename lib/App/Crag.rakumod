@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.16>:auth<Steve Roe (librasteve@furnival.net)>;
+unit module App::Crag:ver<0.0.17>:auth<Steve Roe (librasteve@furnival.net)>;
 
 use MONKEY-SEE-NO-EVAL;
 
@@ -23,6 +23,11 @@ multi sub capricorn( List:D $new ) {
     Time.new( value => duration-to-seconds($new.join(' ')), units => 's');
 }
 
+#viz. https://github.com/Raku/problem-solving/issues/400
+sub fraction($x) {
+    $x.AST.EVAL;
+}
+
 sub eval-me( $cmd ) is export {
     my $settings = q/
         $Physics::Measure::number-comma = '';
@@ -37,6 +42,7 @@ sub eval-me( $cmd ) is export {
     $new ~~ s:g/':<'/♎️\</;
     $new ~~ s:g/'|<'/♓️\</;
     $new ~~ s:g/'^<'/♑️\</;
+    $new ~~ s:g/'§|' (.+?) '|'/{fraction($0)}/;
     $new = $settings ~ $new;
 
     multi prefix:<♑️> ( Str:D $new ) { capricorn( $new) }

@@ -39,4 +39,5 @@ crag 'say (50km * 0.5km * :<2 m/s>).in("sverdrup")'     #https://tos.org/oceanog
 crag 'say (:<27 cubic hectometer per sec>).in("sverdrup")'
 crag 'say %vw-golf1=(:mass(800kg), :cc(1.8l),:hp(:<112 hp>),:burn(:<10 l/100km>))'
 crag 'say %vw-golf8=(:mass(1450kg),:cc(1.0l),:hp(:<110 hp>),:burn(:<4.6 l/100km>))'
+crag 'say :<§|10⁵/₁₂| ft> .in: <m>'
 ```
