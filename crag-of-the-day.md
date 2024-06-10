@@ -42,4 +42,6 @@ crag 'say %vw-golf8=(:mass(1450kg),:cc(1.0l),:hp(:<110 hp>),:burn(:<4.6 l/100km>
 crag 'say (180kW/1450kg)'
 crag 'say :<§|10⁵/₁₂| ft> .in: <m>'
 crag 'say :<§|10 + ⁵/₁₂| ft> .in: <m>'
+crag '%gin<double abv>=(50ml,:<40 %>); say (.<double> * .<abv> with %gin).in("alcohol-unit")'
+crag '%wine<medium abv>=(175ml,:<12 %>); say (.<medium> * .<abv> with %wine).in("alcohol-unit")'
 ```
