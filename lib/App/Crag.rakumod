@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.17>:auth<Steve Roe (librasteve@furnival.net)>;
+unit module App::Crag:ver<0.0.18>:auth<Steve Roe (librasteve@furnival.net)>;
 
 use MONKEY-SEE-NO-EVAL;
 

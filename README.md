@@ -28,6 +28,7 @@ crag [--help] <cmd>
 - crag goes ```subst( ':<' => '♎️<', '|<' => '♓️<', '^<' => '♑️<' )``` 
 - crag goes ```sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }```
 - crag goes ```subst( '§|(.+?)|' => 'Q|$0|.AST.EVAL' )```
+- crag goes ```subst( (\w)’^’ => $0\c[Combining Right Arrow Above] )```
 - ```echo RAKULANG='en_US'``` for us gallons, pints, mpg, etc.
 
 ## More Info
