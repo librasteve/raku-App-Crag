@@ -49,6 +49,6 @@ crag '%wine<medium abv>=(175ml,:<12 %>,:<136 cal>); say %wine'
 crag '%wine<medium abv>=(175ml,:<12 %>); say (.<medium> * .<abv> with %wine).in("alcohol-unit")'
 crag '%beer<pint abv cal>=(:<1 pint>,:<5.0 %>,:<256 cal>); say %beer'
 crag '%beer<pint abv cal>=(:<1 pint>,:<5.0 %>); say (.<pint> * .<abv> with %beer).in("alcohol-unit")'
-crag 'say "F\c[Combining Right Arrow Above]"'
-crag 'my \F⃗=42; say F⃗'
+crag ‘say “p^=mv^”’
+crag ‘$p=:<42 Ns>; say “p^=$p”’
 ```
