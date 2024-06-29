@@ -43,6 +43,7 @@ sub eval-me( $cmd ) is export {
     $new ~~ s:g/'|<'/♓️\</;
     $new ~~ s:g/'^<'/♑️\</;
     $new ~~ s:g/'§|' (.+?) '|'/{fraction($0)}/;
+    $new ~~ s:g/(\d)'^'/"$0\c[Combining Right Arrow Above]"/;
     $new = $settings ~ $new;
 
     multi prefix:<♑️> ( Str:D $new ) { capricorn( $new) }
