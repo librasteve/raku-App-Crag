@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.18>:auth<Steve Roe (librasteve@furnival.net)>;
+unit module App::Crag:ver<0.0.19>:auth<Steve Roe (librasteve@furnival.net)>;
 
 use MONKEY-SEE-NO-EVAL;
 
@@ -46,9 +46,12 @@ sub eval-me( $cmd ) is export {
     $new ~~ s:g/(\w)'^'/$0\c[Combining Right Arrow Above]/;
     $new = $settings ~ $new;
 
-    multi prefix:<♑️> ( Str:D $new ) { capricorn( $new) }
+    multi prefix:<♑️> ( Str:D      $new ) { capricorn( $new) }
     multi prefix:<♑️> ( Duration:D $new ) { capricorn( $new) }
-    multi prefix:<♑️> ( List:D $new ) { capricorn( $new) }
+    multi prefix:<♑️> ( List:D     $new ) { capricorn( $new) }
+
+    use Math::Vector;
+    multi prefix:<^> ( List:D $new ) { Math::Vector.new: $new }
 
     EVAL qq/
         use Physics::Unit;
@@ -57,6 +60,7 @@ sub eval-me( $cmd ) is export {
         use Physics::Measure :ALL;
         use Slang::Roman;
         use Chemistry::Stoichiometry;
+        use Math::Vector;
         no strict;
 
         $new/;
