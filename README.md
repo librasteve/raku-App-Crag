@@ -21,11 +21,9 @@ crag [--help] <cmd>
 [3] > crag 'say :<12.5 ft ±3%> .in: <mm>'                         #3810mm ±114.3
 [4] > crag '$λ=2.5nm; $ν=c/$λ; say $ν.norm'                       #119.92PHz
 [5] > crag '$c=:<37 °C>; $f=:<98.6 °F>; say $f cmp $c'            #Same
-[6] > crag 'say |<80°T> + |<43°30′30″M> .T'                       #124°ESE (T)
-[7] > crag 'say ♑️<5 days 4 hours 52 minutes>'                    #124:52:00
-[8] > crag 'say @physics-constants-abbreviations.join: "\n"'      # ...
+[6] > crag 'say @physics-constants-abbreviations.join: "\n"'      # ...
 ```
-- crag goes ```subst( ':<' => '♎️<', '|<' => '♓️<', '^<' => '♑️<' )``` 
+- crag goes ```subst( ':<' => '♎️<' )``` 
 - crag goes ```sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }```
 - crag goes ```subst( '§|(.+?)|' => 'Q|$0|.AST.EVAL' )```
 - crag goes ```subst( (\w)’^’ => $0\c[Combining Right Arrow Above] )```
@@ -36,10 +34,9 @@ crag [--help] <cmd>
 - https://github.com/librasteve/raku-Physics-Unit.git
 - https://github.com/librasteve/raku-Physics-Error.git
 - https://github.com/librasteve/raku-Physics-Constants.git
-- https://github.com/librasteve/raku-Physics-Navigation.git
 - https://github.com/raku-community-modules/Time-Duration-Parser
 - https://github.com/raku-community-modules/Slang-Roman
 - https://github.com/antononcube/Raku-Chemistry-Stoichiometry
 
 ### Copyright
-copyright(c) 2023 Henley Cloud Consulting Ltd.
+copyright(c) 2023-2024 Henley Cloud Consulting Ltd.
