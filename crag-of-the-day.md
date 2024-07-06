@@ -2,16 +2,15 @@ Here are some crags to plunder for a crag-of-the-day generator:
 
 ```
 crag '$t=♎️<22:04:22>; say $t.in: <millisecs>'
-crag 'say ♓️<43°30′30″M>'
 crag '{say $^w * $^l}(1.1m±1%, 2.4m±4%)'
 crag 'say :<343 m/s ±1> .in: <mph>'
 crag 'say e ** (i * π) =~= -1'
 crag '$d=7cm ±3%; say π * $d'
-crag 'say (:<1676 km> / (^<12:38> - ^<10:22>)).in: <mph>'
+crag 'say (:<1676 km> / (:<12:38:00> - :<10:22:00>)).in: <mph>'
 crag 'say "{2/0==1/0}, {1/0==0/0}"'
 crag 'say (1 / :<30 mpg>).in: <l/100km>'
 crag 'say (c * :<13.8 gigayears>).in: <megaparsec>'
-crag 'say :<13.8 bn years> .rebase.norm'
+crag 'say :<13.8 billion years> .rebase.norm'
 crag '$h=450;$w=1520;$d=2315;$v=$h*$w*$d; say (♎️"$v cubic millimetre").in: <cords>'    #hilux load 0.44cord
 crag '$h=69;$w=31+21;$d=21+43;$v=$h*$w*$d; say (♎️"$v cu in").in: <cords>'      #my logpile
 crag 'say :<1.04 cord> * :<500 kg/m^3>'
@@ -50,5 +49,5 @@ crag '%wine<medium abv>=(175ml,:<12 %>); say (.<medium> * .<abv> with %wine).in(
 crag '%beer<pint abv cal>=(:<1 pint>,:<5.0 %>,:<256 cal>); say %beer'
 crag '%beer<pint abv cal>=(:<1 pint>,:<5.0 %>); say (.<pint> * .<abv> with %beer).in("alcohol-unit")'
 crag 'say “p^=mv^”'
-crag '$v=^(1,2,3); $u="m/s"; $v^=Measure.new(:$v,:$u); $m=4kg; $p^=$m*$v^; say "p^=$p^"'
+crag '$v^=^([1,2,3],"m/s"); $m=4kg; $p^=$m*$v^; say "p^=$p^"'
 ```
