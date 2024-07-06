@@ -1,0 +1,7 @@
+use v6.d;
+use Test;
+use App::Crag;
+
+lives-ok {eval-me('say 1')}, 'sanity check';
+
+done-testing;
