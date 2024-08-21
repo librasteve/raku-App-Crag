@@ -48,5 +48,13 @@ crag 'say (^<1 magnum> * ^<13.5 %>).in("alcohol-unit")'
 
 #junglejuice = 1.75 liter 190 proof / (5 gallon)
 
+---
+
+#keg -> case (locale dependent)
+crag 'say ^<1 keg> / ^<1 case>'
+
+#keg -> 12 floz (locale dependent)
+crag 'say ^<1 keg> / ^<12 floz>'  
+
 ```
 
