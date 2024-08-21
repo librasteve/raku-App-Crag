@@ -4,7 +4,7 @@
 
 calculator using raku grammars for the command line
 
-NB. The syntax for measures changed from `:<...>` to `^<...>` to clashes with the colon
+NB. The syntax for measures changed from `:<...>` to `^<...>` to avoid clashes with the colon
 
 ## Install
 ```raku
