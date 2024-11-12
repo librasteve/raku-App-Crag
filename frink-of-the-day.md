@@ -47,6 +47,7 @@ crag 'say (330ml * 4%).in("alcohol-unit")'   <=== note % #FIXME
 crag 'say (^<1 magnum> * ^<13.5 %>).in("alcohol-unit")'
 
 #junglejuice = 1.75 liter 190 proof / (5 gallon)
+crag 'say (1.75l * ^<190 us-proof> / ^<5 us-gallon>).in: "percent"'
 
 ---
 
