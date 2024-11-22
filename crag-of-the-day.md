@@ -53,4 +53,5 @@ crag '%beer<pint abv cal>=(^<1 pint>,^<5.0 %>); say (.<pint> * .<abv> with %beer
 crag 'say "p^=mv^"'
 crag '$v^=^([1,2,3],"m/s"); $m=4kg; $p^=$m*$v^; say "p^=$p^"'
 crag 'say "2015-11-24".Date.year'
+crag 'say ^<1.35 Nm ±0.13>'
 ```
