@@ -31,13 +31,14 @@ crag 'say 0rMCMXLIV'
 crag 'say (0rXXIII + 0rMM).&to-roman'
 crag '$circus-maximus-lap = ^<2000 ft>; $laps = 7; say $circus-maximus-lap * $laps;'
 crag '$chariot-speed = ^<40 mph>; $race-distance = ^<14000 ft>; say $race-distance / $chariot-speed;'
-crag '$s=Speed.new(value=>0rXL,units=>"mph"); $d=Distance.new(value=>0rMM,units=>"ft"); say "lap-time {$d/$s}"'
+crag '$s=^(0rXL,"mph"); $d=^(0rMM,"ft"); say "lap-time {$d/$s}"'
 crag '$fd = ^"{[+] <3 1/2>} in"; say "Fits on a $fd floppy disk."'  #texas fractions
 crag '$fd = ^<§|3½| in>; say "Fits on a $fd floppy disk."'  #unicode fractions
 crag 'say 2**63-1'
 crag 'say molecular-mass("SO2")'
 crag "say chemical-element-data('Cl');"
-crag 'say (50km * 0.5km * ^<2 m/s>).in("sverdrup")'     #https://tos.org/oceanography/article/is-the-atlantic-overturning-circulation-approaching-a-tipping-point
+#https://tos.org/oceanography/article/is-the-atlantic-overturning-circulation-approaching-a-tipping-point
+crag 'say (50km * 0.5km * ^<2 m/s>).in("sverdrup")'
 crag 'say (^<27 cubic hectometer per sec>).in("sverdrup")'
 crag 'say %vw-golf1=(:mass(800kg), :cc(1.8l),:hp(^<112 hp>),:burn(^<10 l/100km>))'
 crag 'say %vw-golf8=(:mass(1450kg),:cc(1.0l),:hp(^<110 hp>),:burn(^<4.6 l/100km>))'
