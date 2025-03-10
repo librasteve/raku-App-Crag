@@ -10,3 +10,6 @@
 .json.swp
 .yaml.swp
 .pem
+.gz
+.xml
+.iml
