@@ -1,31 +1,29 @@
 {
-  "name": "App::Crag",
-  "description": "calculator using raku grammars",
-  "version": "0.0.22",
-  "perl": "6.d",
-  "authors": [
-    "librasteve"
-  ],
-  "auth": "zef:librasteve",
-  "depends": [
-    "Physics::Measure",
-    "Physics::Constants",
-    "Physics::Vector",
-    "Slang::Roman",
-    "Chemistry::Stoichiometry"
-  ],
-  "build-depends": [],
-  "test-depends": [],
-  "provides": {
-    "App::Crag": "lib/App/Crag.rakumod"
-  },
-  "resources": [],
-  "license": "Artistic-2.0",
-  "tags": [
-    "App",
-    "CLI",
-    "Physics"
-  ],
-  "api": "1",
-  "source-url": "git://github.com/librasteve/raku-App-Crag.git"
+    "name": "App::Crag",
+    "description": "calculator using raku grammars",
+    "version": "0.0.23",
+    "authors": [
+        "librasteve"
+    ],
+    "auth": "zef:librasteve",
+    "depends": [
+        "Physics::Measure",
+        "Physics::Constants",
+        "Physics::Vector",
+        "Slang::Roman",
+        "Slang::NumberBase",
+        "Chemistry::Stoichiometry"
+    ],
+    "build-depends": [],
+    "provides": {
+        "App::Crag": "lib/App/Crag.rakumod"
+    },
+    "license": "Artistic-2.0",
+    "tags": [
+        "App",
+        "CLI",
+        "Physics"
+    ],
+    "api": "1",
+    "source-url": "git://github.com/librasteve/raku-App-Crag.git"
 }

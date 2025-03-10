@@ -56,4 +56,5 @@ crag '$v^=^([1,2,3],"m/s"); $m=4kg; $p^=$m*$v^; say "p^=$p^"'
 crag 'say "2015-11-24".Date.year'
 crag 'say ^<1.35 Nm ±0.13>'
 crag 'r(0.05); say ^(π, "mph") / ^(e, "knots")'
+crag 'say ₃₆123.45'
 ```
