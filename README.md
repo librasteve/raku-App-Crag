@@ -2,7 +2,7 @@
 
 # raku App::Crag
 
-calculator using raku grammars for the command line
+Calculator using RAku Grammars for the command line
 
 NB. The syntax for measures changed from `:<...>` to `^<...>` to avoid clashes with the colon
 
