@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JsBuildToolPackageJson" sorting="DEFINITION_ORDER" />
-  <component name="ProjectRootManager" version="2" project-jdk-name="Raku v2024.01" project-jdk-type="Raku SDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="v2022.12" project-jdk-type="Raku SDK" />
   <component name="edument.perl6idea.language.RakuLanguageVersionService" version="D" explicit-for-new="true" />
 </project>
