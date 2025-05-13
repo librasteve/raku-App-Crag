@@ -46,7 +46,7 @@ my sub eval-me(Str() $cmd) is export {
     $Physics::Measure::round-val = 0.01;
 
     my $value := $cu.eval('no strict; ' ~ $cmd
-      .subst(/ '§|' (<-[|]>+) /, { fraction($0) }, :g)
+      .subst(/ '§|' (<-[|]>+) '|' /, { fraction($0) }, :g)
       .subst(/ (\w) '^' ([\D|$]) /, { "$0\c[Combining Right Arrow Above]$1" }, :g)
     );
     .say with $cu.exception;
