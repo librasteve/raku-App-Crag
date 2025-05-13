@@ -13,7 +13,7 @@
         "Slang::Roman",
         "Slang::NumberBase",
         "Chemistry::Stoichiometry",
-        "CodeUnit:ver<0.0.5+>:auth<zef:lizmat>",
+        "CodeUnit:ver<0.0.6+>:auth<zef:lizmat>",
         "Prompt:ver<0.0.10+>:auth<zef:lizmat>"
     ],
     "build-depends": [],

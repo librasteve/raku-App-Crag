@@ -1,12 +1,12 @@
 unit module App::Crag:ver<0.0.24>:auth<zef:librasteve>;
 
-#- Only use stuff that we need here for their exports --------------------------
-use Physics::Measure;
+use Slang::Roman;
+use Slang::NumberBase;
+use Physics::Measure :ALL;
 use Physics::Vector;
-#use Physics::Constants;
-#use Chemistry::Stoichiometry;
-#use Math::Sequences;
-use CodeUnit:ver<0.0.5+>:auth<zef:lizmat>;
+use Physics::Constants;
+use Chemistry::Stoichiometry;
+use CodeUnit:ver<0.0.6+>:auth<zef:lizmat>;
 use Prompt:ver<0.0.10+>:auth<zef:lizmat>;
 
 #- helper subs / ops -----------------------------------------------------------
@@ -26,22 +26,11 @@ multi prefix:<^>(List:D $new where $new.head ~~ List) {
 sub fraction(Str() $x) { $x.subst(/<ws>/, :g).AST.EVAL }
 
 #- setting up evaluation construct ---------------------------------------------
-my $context  := context;
-my $cu       := CodeUnit.new(:$context, :multi-line-ok);
-my $preamble := start {
-    $cu.eval(Q:to/PREAMBLE/);
-use Slang::Roman;
-use Slang::NumberBase;
-use Physics::Measure :ALL;
-use Physics::Vector;
-use Physics::Constants;
-use Chemistry::Stoichiometry;
-PREAMBLE
-}
+my $context := context;
+my $cu      := CodeUnit.new(:lang(BEGIN $*LANG), :$context, :multi-line-ok);
 
 #- actual evaluation -----------------------------------------------------------
 my sub eval-me(Str() $cmd) is export {
-    await $preamble;
     $Physics::Measure::number-comma = '';
     $Physics::Measure::round-val = 0.01;
 
