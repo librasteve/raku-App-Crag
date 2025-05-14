@@ -1,7 +1,8 @@
-use v6.d;
 use Test;
 use App::Crag;
 
+plan 1;
+
 lives-ok {eval-me('say 1')}, 'sanity check';
 
-done-testing;
+# vim: expandtab shiftwidth=4
