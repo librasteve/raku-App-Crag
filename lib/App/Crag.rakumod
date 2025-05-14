@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.24>:auth<zef:librasteve>;
+unit module App::Crag:ver<0.0.25>:auth<zef:librasteve>;
 
 use Slang::Roman;
 use Slang::NumberBase;
