@@ -8,22 +8,27 @@ NB. The syntax for measures changed from `:<...>` to `^<...>` to avoid clashes w
 
 ## Install
 ```raku
-zef install --verbose App::Crag
+zef install App::Crag
 ```
 
 ## Usage
+#### Use the `crag` command:
 ```raku
 crag [--help] <cmd>
+```
+#### Use the `crag` REPL:
+```raku
+crag
 ```
 
 ## Examples
 ```raku
-[1] > crag 'say (1.6km / (60 * 60 * 1s)).in: <mph>'               #0.99mph
-[2] > crag '$m=95kg; $a=^<9.81 m/s^2>; $f=$m*$a; say $f'          #931.95N
-[3] > crag 'say ^<12.5 ft ±3%> .in: <mm>'                         #3810mm ±114.3
-[4] > crag '$λ=2.5nm; $ν=c/$λ; say $ν.norm'                       #119.91PHz
-[5] > crag '$c=^<37 °C>; $f=^<98.6 °F>; say $f cmp $c'            #Same
-[6] > crag 'say @physics-constants-symbols.join: "\n"'            # ...
+[1] > crag '(1.6km / (60 * 60 * 1s)).in: <mph>'               #0.99mph
+[2] > crag '$m=95kg; $a=^<9.81 m/s^2>; $f=$m*$a; $f'          #931.95N
+[3] > crag '^<12.5 ft ±3%> .in: <mm>'                         #3810mm ±114.3
+[4] > crag '$λ=2.5nm; $ν=c/$λ; $ν.norm'                       #119.91PHz
+[5] > crag '$c=^<37 °C>; $f=^<98.6 °F>; $f cmp $c'            #Same
+[6] > crag '@physics-constants-symbols.join: "\n"'            # ...
 ```
 - crag goes ```subst( '^<' => '♎️<' )``` 
 - crag goes ```sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }```
@@ -41,4 +46,4 @@ crag [--help] <cmd>
 - https://github.com/antononcube/Raku-Chemistry-Stoichiometry
 
 ### Copyright
-copyright(c) 2023-2024 Henley Cloud Consulting Ltd.
+copyright(c) 2023-2025 Henley Cloud Consulting Ltd.
