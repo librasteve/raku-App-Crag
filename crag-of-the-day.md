@@ -57,4 +57,6 @@ crag '"2015-11-24".Date.year'
 crag '^<1.35 Nm ±0.13>'
 crag 'r(0.05); ^(π, "mph") / ^(e, "knots")'
 crag '₃₆123.45'
+crag '$bmi = 89.3kg / (1.86m)**2'
+crag '$w = ^<200 lbm>;  $h = ^<6 ft>; $bmi = $w / $h²'
 ```
