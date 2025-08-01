@@ -60,4 +60,6 @@ crag '₃₆123.45'
 crag '$bmi = 89.3kg / (1.86m)**2'
 crag '$w = ^<200 lbm>;  $h = ^<6 ft>; $bmi = $w / $h²'
 crag 'r(0); 9.109_383_701_5e-31kg ±0.000_000_002_8e-31'
+crag '$x = ^<10 J/K>; $y = ^<1000 K>; ($y * $x)'
+crag '$P=:<30 atm>; $V=6.2l; $T=37°C; $R=gas-constant; say (($P*$V)/($R*$T))'
 ```
