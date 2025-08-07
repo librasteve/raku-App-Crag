@@ -64,4 +64,12 @@ crag '$x = ^<10 J/K>; $y = ^<1000 K>; ($y * $x)'
 crag '$P=^<30 atm>; $V=6.2l; $T=37°C; $R=gas-constant; say (($P*$V)/($R*$T))'
 crag '(^<1/4 mile> / 4.23s) .in: <mph>'
 crag '(^<329 mph> / 4.23s) / g'
+crag '$panel-density = ^<0.5 kg/m2>'
+crag '$panel-area = 70m * 70m'
+crag '$panel-mass = $panel-density * $panel-area'
+crag '$power-mass = 10kW / 100kg'
+crag '$panel-power = $power-mass * $panel-mass'
+crag '$voyager = ^<35 km/s>'
+
+
 ```
