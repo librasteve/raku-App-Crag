@@ -38,7 +38,10 @@ my sub eval-me(Str() $cmd) is export {
       .subst(/ '§|' (<-[|]>+) '|' /, { fraction($0) }, :g)
       .subst(/ (\w) '^' ([\D|$]) /, { "$0\c[Combining Right Arrow Above]$1" }, :g)
     );
-    .say with $cu.exception;
+    with $cu.exception {
+        .say;
+        $cu.exception = Nil;
+    }
     $value
 }
 
