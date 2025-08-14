@@ -1,5 +1,7 @@
 Frink is a precursor to crag with many similar ideas.
 
+NB. Need currency, need LLM
+
 To compare:
 
 
@@ -63,4 +65,6 @@ crag 'say ^<1 keg> / ^<1 case>'
 crag 'say ^<1 keg> / ^<12 floz>'  
 
 ```
+
+
 
