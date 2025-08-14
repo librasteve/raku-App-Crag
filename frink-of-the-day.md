@@ -63,7 +63,12 @@ crag 'say ^<1 keg> / ^<1 case>'
 
 #keg -> 12 floz (locale dependent)
 crag 'say ^<1 keg> / ^<12 floz>'  
+```
 
+## Sniping Auctions
+```
+#now[] + 7 hours + 44 min
+wip
 ```
 
 
