@@ -52,9 +52,10 @@ crag 'say (1.75l * ^<190 us-proof> / ^<5 us-gallon>).in: "percent"'
 #5 12 floz junglejuice -> "beer"
 crag '$jj=(1.75l * ^<190 us-proof> / ^<5 us-gallon>); $beer=(^<12 floz> * ^<4 %>); say (5 * ^<12 floz> * $jj / $beer)'
 #Maybe that's why people were getting punched in the head. QED.
+```
 
----
-
+## More Liquor
+```
 #keg -> case (locale dependent)
 crag 'say ^<1 keg> / ^<1 case>'
 
