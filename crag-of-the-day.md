@@ -70,6 +70,5 @@ crag '$panel-mass = $panel-density * $panel-area'
 crag '$power-mass = 10kW / 100kg'
 crag '$panel-power = $power-mass * $panel-mass'
 crag '$voyager = ^<35 km/s>'
-
-
+crag '( ?^<TNT energy in J/kg> * 51g ) / ( 91kg * g )'
 ```
