@@ -8,6 +8,7 @@ use Physics::Constants;
 use Chemistry::Stoichiometry;
 use CodeUnit:ver<0.0.6+>:auth<zef:lizmat>;
 use Prompt:ver<0.0.10+>:auth<zef:lizmat>;
+use LLM::DWIM;
 
 #- helper subs / ops -----------------------------------------------------------
 sub r( $x ) { $Physics::Measure::round-val = $x }
@@ -21,6 +22,28 @@ multi prefix:<^>(List:D $new where $new.head ~~ Real) {
 multi prefix:<^>(List:D $new where $new.head ~~ List) {
     Physics::Vector.new: |$new
 }
+
+multi prefix:<?>(Str:D $new) {
+    chomp dwim $new ~ 'in a short sentence'
+}
+multi prefix:<?>(List:D $new) {
+    chomp dwim $new.join('') ~ 'in a short sentence'
+}
+
+sub dwim-to-measure(Str $new) {
+    my $preamble = 'what is the ';
+    my $postamble = ' just give me a decimal number, if exponential use simple e notation with no spaces, always omit the units';
+
+    $new ~~ / 'in' \s+ (\S+) $ /;
+    my $units = ~$0 or return 'please use the form ?^<llm query in units>';
+
+    my $value = chomp dwim $preamble ~ $new ~ $postamble;
+
+    Measure.new: :$value, :$units;
+}
+
+multi prefix:<?^>(Str:D $new) { dwim-to-measure($new) }
+multi prefix:<?^>(List:D $new) { dwim-to-measure($new.join(' ')) }
 
 #viz. https://github.com/Raku/problem-solving/issues/400
 sub fraction(Str() $x) { $x.subst(/<ws>/, :g).AST.EVAL }
