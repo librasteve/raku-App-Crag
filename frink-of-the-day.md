@@ -89,7 +89,7 @@ need $$
 ## Sniping Auctions
 ```
 #now[] + 7 hours + 44 min
-wip
+(now + ^<7 hr> + ^<44 min>).value.DateTime -or - (now + ^<07:44:00>).value.DateTime
 ```
 
 
