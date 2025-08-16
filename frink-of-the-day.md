@@ -92,5 +92,17 @@ need $$
 (now + ^<7 hr> + ^<44 min>).value.DateTime -or - (now + ^<07:44:00>).value.DateTime
 ```
 
+## Junkyard Wars
+```
+#half ton -> barrels water
+( ^<1/2 ton> / ?^<water density in kg/m3> ) .in: <barrels>
+
+#2 fathoms water gravity barrel -> 40 watts minutes
+( ^<2 fathoms> * ?^<water density in kg/m3> * (g) * ^<1 barrel> ) / ?^<hand crank power in W>
+
+#2 fathoms water gravity barrel -> Calories
+( ^<2 fathoms> * ?^<water density in kg/m3> * (g) * ^<1 barrel> ).in: <kcal>
+```
+
 
 
