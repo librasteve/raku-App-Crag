@@ -59,10 +59,31 @@ crag '$jj=(1.75l * ^<190 us-proof> / ^<5 us-gallon>); $beer=(^<12 floz> * ^<4 %>
 ## More Liquor
 ```
 #keg -> case (locale dependent)
-crag 'say ^<1 keg> / ^<1 case>'
+^<1 keg> / ^<1 case>
 
 #keg -> 12 floz (locale dependent)
-crag 'say ^<1 keg> / ^<12 floz>'  
+^<1 keg> / ^<12 floz>
+```
+
+## Movie Magic
+```
+#1/4 moonmass / (4/3 pi (500/2 km)^3) -> water
+( (?^<moonmass in kg> / 4) / (4/3 * pi * (500km/2)**3) ) / ?^<water density in kg/m3>
+
+#G 1/4 moonmass / (500/2 km)^2 -> gravity
+( ( (?^<moonmass in kg> / 4) / (500km/2)**2 ) * G ) / ?^<earth gravity in m/s^2>
+```
+
+## Fiscal Calculations
+need $$
+
+## Ouch!
+```
+#51 grams TNT -> 185 pounds gravity feet
+( ?^<TNT energy in J/kg> * 51g ) / ( 91kg * g )
+
+#51 grams TNT -> "teaspoons gasoline" [hmmm]
+( ( 51g * ?^<TNT energy in J/kg> ) / ( ?^<gasoline energy in J/kg> ) ) .in: <g>
 ```
 
 ## Sniping Auctions
