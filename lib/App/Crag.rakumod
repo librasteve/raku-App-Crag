@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.26>:auth<zef:librasteve>;
+unit module App::Crag:ver<0.0.27>:auth<zef:librasteve>;
 
 use Slang::Roman;
 use Slang::NumberBase;
@@ -90,14 +90,17 @@ my multi sub MAIN () {
 my multi sub MAIN(Bool :$help!) {
     say q:to/HELP/;
 Usage:
-    ./crag [--help] <cmd>
+    crag [--help] <cmd>
+    -or-
+    crag -> REPL
 Examples:
-    [1] > crag '(1.6km / (60 * 60 * 1s)).in: <mph>'        #0.99mph
-    [2] > crag '$m=95kg; $a=^<9.81 m/s^2>; $m*$a'          #931.95N
-    [3] > crag '^<12.5 ft ±3%> .in: <mm>'                  #3810mm ±114.3
-    [4] > crag '$λ=2.5nm; $ν=c/$λ; $ν.norm'                #119.91PHz
-    [5] > crag '$c=^<37 °C>; $f=^<98.6 °F>; $f cmp $c'     #Same
-    [6] > crag '@physics-constants-symbols.join: "\n"'     # ...
+    [1] (1.6km / (60 * 60 * 1s)).in: <mph>       #0.99mph
+    [2] $m=95kg; $a=^<9.81 m/s^2>; $m*$a         #931.95N
+    [3] ^<12.5 ft ±3%> .in: <mm>                 #3810mm ±114.3
+    [4] $λ=2.5nm; $ν=c/$λ; $ν.norm               #119.91PHz
+    [5] $c=^<37 °C>; $f=^<98.6 °F>; $f cmp $c    #Same
+    [6] @physics-constants-symbols.join: "\n"    # ...
+    [7] ?^<TNT energy in J/kg>                   #4184000J/kg
 More info:
     - https://github.com/librasteve/raku-Physics-Measure.git
     - https://github.com/librasteve/raku-Physics-Unit.git
@@ -105,9 +108,12 @@ More info:
     - https://github.com/librasteve/raku-Physics-Constants.git
     - https://github.com/raku-community-modules/Slang-Roman
     - https://github.com/antononcube/Raku-Chemistry-Stoichiometry
-- crag goes subst( '^<' => '♎️<' )
+    - https://github.com/bduggan/raku-llm-dwim
+- crag goes '^<...>' => '♎️<...>' )
 - crag goes sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }
 - crag goes ```subst( '§|(.+?)|' => 'Q|$0|.AST.EVAL' )```
+- crag goes '?<...>' => dwim )
+- crag goes '?^<...>' => dwim => '♎️<...>' )
 - echo RAKULANG='en_US' for us gallons, pints, mpg, etc.
 HELP
 }
