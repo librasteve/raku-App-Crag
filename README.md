@@ -21,6 +21,8 @@ crag [--help] <cmd>
 crag
 ```
 
+For LLM::DWIM features, you will need e.g. a [Gemini App Key](https://ai.google.dev/gemini-api/docs/api-key)
+
 ## Examples
 ```
 Usage:
