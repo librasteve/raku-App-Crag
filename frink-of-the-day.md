@@ -14,11 +14,11 @@ And contrast:
 
 
 Possible new features inspired by Frink:
-- [ ] add water, etc. via Physics::Materials
-- [ ] add planets, etc. via Physics::Astronomy
+- [x] add water, etc. via LLM::DWIM
+- [x] add planets, etc. via LLM::DWIM
 - [ ] add url fetch and extract
 - [ ] language translation via Google Translate
-- [ ] words as numbers via Google Search box
+- [x] words as numbers via LLM::DWIM
 
 Here are the Frink [Sample Calculations](https://frinklang.org/#SampleCalculations) translated to crag:
 (I have converted to european style units too - since that is the up to date way)
