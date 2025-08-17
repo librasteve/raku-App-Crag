@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.27>:auth<zef:librasteve>;
+unit module App::Crag:ver<0.0.28>:auth<zef:librasteve>;
 
 use Slang::Roman;
 use Slang::NumberBase;
@@ -13,11 +13,11 @@ use LLM::DWIM;
 #- helper subs / ops -----------------------------------------------------------
 sub r( $x ) { $Physics::Measure::round-val = $x }
 
-multi prefix:<^>(Str:D $new) {
-    Measure.new: $new
+multi prefix:<^>(Str:D $str) {
+    ♎️"$str";
 }
 multi prefix:<^>(List:D $new where $new.head ~~ Real) {
-    Measure.new: $new.join(' ')
+    ♎️"$str";
 }
 multi prefix:<^>(List:D $new where $new.head ~~ List) {
     Physics::Vector.new: |$new
@@ -39,7 +39,7 @@ sub dwim-to-measure(Str $new) {
 
     my $value = chomp dwim $preamble ~ $new ~ $postamble;
 
-    Measure.new: :$value, :$units;
+    ♎️"$value $units";
 }
 
 multi prefix:<?^>(Str:D $new) { dwim-to-measure($new) }
