@@ -104,5 +104,17 @@ need $$
 ( ^<2 fathoms> * ?^<water density in kg/m3> * (g) * ^<1 barrel> ).in: <kcal>
 ```
 
+## Body Heat
+```
+#2000 Calories/day -> watts
+( ^<2000 kcal> / ^<1 day> ).in: <W>
+```
+
+## Microwave Cookery
+```
+#800 W 60 sec / (27 oz 1 calorie/gram/degC) -> degF
+
+```
+
 
 
