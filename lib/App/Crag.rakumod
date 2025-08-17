@@ -17,6 +17,7 @@ multi prefix:<^>(Str:D $str) {
     ♎️"$str";
 }
 multi prefix:<^>(List:D $new where $new.head ~~ Real) {
+    my $str = $new.join(' ');
     ♎️"$str";
 }
 multi prefix:<^>(List:D $new where $new.head ~~ List) {
