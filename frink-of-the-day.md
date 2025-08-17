@@ -17,7 +17,7 @@ Possible new features inspired by Frink:
 - [x] add water, etc. via LLM::DWIM
 - [x] add planets, etc. via LLM::DWIM
 - [ ] add url fetch and extract
-- [ ] language translation via Google Translate
+- [x] language translation via LLM::DWIM
 - [x] words as numbers via LLM::DWIM
 
 Here are the Frink [Sample Calculations](https://frinklang.org/#SampleCalculations) translated to crag:
