@@ -116,5 +116,22 @@ need $$
 ( (^<800 W> * ^<60 sec>) / (^<27 oz> * ^<1 cal/g.K>) )
 ```
 
+## Why is Superman so Lazy?
+```
+> $sunpower = ?^<total power radiated by the sun in W>
+382799999999999989583362129.92W
+> $sundist = ?^<distance between the earth and the sun in m>
+149600000000m
+> $earthpower = $sunpower / ( 4 * pi * $sundist**2 )
+1361.13W/m^2
+> $chargerate = $earthpower * ^<12 ft^2>
+1517.43W
+> ( ^<2 ton> * ^<7 ft> * g ) / $chargerate
+25.02s
+
+> ( ^"{225+135} lbm" * ^<15000 ft> * g ) / $chargerate
+01:20:24
+```
+
 
 
