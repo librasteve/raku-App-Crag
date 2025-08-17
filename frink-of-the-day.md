@@ -133,5 +133,18 @@ need $$
 01:20:24
 ```
 
+## Fart Jokes
+```
+#12.5 kilotons TNT / (6 years + 9 months) -> horsepower
+( ( ^<12.5 kiloton> * ?^<TNT energy in J/kg> ) / ( ^<6 years> + ^<9 months> ) ).in: <horsepower>
+
+#12.5 kilotons TNT / (6 years + 9 months) -> Calories/day
+( ( ^<12.5 kiloton> * ?^<TNT energy in J/kg> ) / ( ^<6 years> + ^<9 months> ) ).in: <kcal/day>
+
+#12.5 kilotons TNT / (2000 Calories/day) -> years
+( ( ^<12.5 kiloton> * ?^<TNT energy in J/kg> ) / ^<2000 kcal/day> ).in: <years>
+```
+
+et cetera
 
 
