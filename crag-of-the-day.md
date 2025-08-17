@@ -71,4 +71,5 @@ crag '$power-mass = 10kW / 100kg'
 crag '$panel-power = $power-mass * $panel-mass'
 crag '$voyager = ^<35 km/s>'
 crag '( 51g * ?^<TNT energy in J/kg> ) / ( 91kg * g )'
+crag '?^<ein und zwanzig in ①>'
 ```
