@@ -113,7 +113,7 @@ need $$
 ## Microwave Cookery
 ```
 #800 W 60 sec / (27 oz 1 calorie/gram/degC) -> degF
-
+( (^<800 W> * ^<60 sec>) / (^<27 oz> * ^<1 cal/g.K>) )
 ```
 
 
