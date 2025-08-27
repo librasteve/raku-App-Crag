@@ -91,13 +91,17 @@ $jj=(1.75l * ^<190 us-proof> / ^<5 us-gallon>); $beer=(^<12 floz> * ^<4 %>); say
 #burnrate = (#2001-06-30# - #2000-12-31#) / ((86481 - 41601) thousand dollars)
 #burnrate -> dollars/day
 #41601 thousand dollars / burnrate -> "days"
+##2001-06-30# + 41601 thousand dollars / burnrate
 
 @dates=<2024-12-31 2025-06-30>>>.Date
 @cashs=[86481,41601].map: { ^"$_ thousand \$" }
 $burnrate = - ( ([-] @cashs) / ^"{[-] @dates} days" )
+-or-
+$burnrate = ^((86481 - 41601), 'thousand dollars') / ^(('2024-12-31'.Date - '2025-06-30'.Date), 'days')
+
 $burnrate.in: 'dollars/day'
 $left = (@cashs[*-1] / $burnrate).in: 'days'
-(DateTime.now + $left).Date
+(now.DateTime + $left).DateTime
 ```
 
 ## Ouch!
