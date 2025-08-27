@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.28>:auth<zef:librasteve>;
+unit module App::Crag:ver<0.0.29>:auth<zef:librasteve>;
 
 use Slang::Roman;
 use Slang::NumberBase;
@@ -35,7 +35,7 @@ sub dwim-to-measure(Str $new) {
     my $preamble = 'what is the ';
     my $postamble = ' just give me a decimal number, if exponential use simple e notation with no spaces, always omit the units';
 
-    $new ~~ / 'in' \s+ (\S+) $ /;
+    $new ~~ / 'in' \s+ (.+) $ /;
     my $units = ~$0 or return 'please use the form ?^<llm query in units>';
 
     my $value = chomp dwim $preamble ~ $new ~ $postamble;
@@ -43,7 +43,7 @@ sub dwim-to-measure(Str $new) {
     ♎️"$value $units";
 }
 
-multi prefix:<?^>(Str:D $new) { dwim-to-measure($new) }
+multi prefix:<?^>(Str:D  $new) { dwim-to-measure($new) }
 multi prefix:<?^>(List:D $new) { dwim-to-measure($new.join(' ')) }
 
 #viz. https://github.com/Raku/problem-solving/issues/400

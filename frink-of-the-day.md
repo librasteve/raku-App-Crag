@@ -1,24 +1,21 @@
 Frink is a precursor to crag with many similar ideas.
 
-NB. Need currency, need LLM
-
 To compare:
 
 
 
 And contrast:
-- crag has a style `crag 'say ...'` intended for the command line (like raku -e 'say ...')
 - SI units are preferred, non-SI need the `^<value units[ ±error]>` syntax
 - crag has no support for language translation
 - crag has no support for words as numbers
 
 
-Possible new features inspired by Frink:
+Crag features inspired by Frink:
 - [x] add water, etc. via LLM::DWIM
 - [x] add planets, etc. via LLM::DWIM
-- [ ] add url fetch and extract
 - [x] language translation via LLM::DWIM
 - [x] words as numbers via LLM::DWIM
+- [x] currency
 
 Here are the Frink [Sample Calculations](https://frinklang.org/#SampleCalculations) translated to crag:
 (I have converted to european style units too - since that is the up to date way)
@@ -26,16 +23,16 @@ Here are the Frink [Sample Calculations](https://frinklang.org/#SampleCalculatio
 ## Mass and Volume
 ```
 #10 feet 12 feet 8 feet -> gallons
-crag 'say 3.3m * 4m * 6.6m'
+3.3m * 4m * 6.6m
 
 #10. feet 12 feet 8 feet water -> pounds
-crag 'say (3.3m * 4m * 6.6m * ^<1000 kg/m^3>)'
+(3.3m * 4m * 6.6m * ^<1000 kg/m^3>)
 
 #if you insist on doing this the american way
-crag 'say (^<10 feet> * ^<12 feet> * ^<8 feet> * ^<1000 kg/m^3>).in: <pounds-mass>'
+(^<10 feet> * ^<12 feet> * ^<8 feet> * ^<1000 kg/m^3>).in: <pounds-mass>
 
 #2. tons / (10 feet 12 feet water) -> feet
-crag 'say ^<2 tonne> / (3.3m * 4m * ^<1000 kg/m^3>)'
+^<2 tonne> / (3.3m * 4m * ^<1000 kg/m^3>)
 ```
 
 ## Liquor
@@ -46,13 +43,13 @@ crag 'say ^<2 tonne> / (3.3m * 4m * ^<1000 kg/m^3>)'
 (330ml * 4%).in("alcohol-unit")   <=== note % #FIXME 
 
 #magnum 13.5 percent -> beer
-crag 'say (^<1 magnum> * ^<13.5 %>).in("alcohol-unit")'
+(^<1 magnum> * ^<13.5 %>).in("alcohol-unit")
 
 #junglejuice = 1.75 liter 190 proof / (5 gallon)
-crag 'say (1.75l * ^<190 us-proof> / ^<5 us-gallon>).in: "percent"'
+(1.75l * ^<190 us-proof> / ^<5 us-gallon>).in: "percent"
 
 #5 12 floz junglejuice -> "beer"
-crag '$jj=(1.75l * ^<190 us-proof> / ^<5 us-gallon>); $beer=(^<12 floz> * ^<4 %>); say (5 * ^<12 floz> * $jj / $beer)'
+$jj=(1.75l * ^<190 us-proof> / ^<5 us-gallon>); $beer=(^<12 floz> * ^<4 %>); say (5 * ^<12 floz> * $jj / $beer)
 #Maybe that's why people were getting punched in the head. QED.
 ```
 

@@ -31,15 +31,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="File::Directory::Tree" type="raku">
-        <CLASSES />
-        <JAVADOC />
-        <SOURCES>
-          <root url="raku://1166071006:File::Directory::Tree!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="AttrX::Lazy" type="raku">
         <CLASSES />
         <JAVADOC />
@@ -94,29 +85,11 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="Slangify:ver&lt;0.0.1+&gt;" type="raku">
-        <CLASSES />
-        <JAVADOC />
-        <SOURCES>
-          <root url="raku://1166071006:Slangify:ver&lt;0.0.1+&gt;!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="Slang::Tuxic" type="raku">
         <CLASSES />
         <JAVADOC />
         <SOURCES>
           <root url="raku://1166071006:Slang::Tuxic!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Slangify:ver&lt;0.0.3+&gt;" type="raku">
-        <CLASSES />
-        <JAVADOC />
-        <SOURCES>
-          <root url="raku://1166071006:Slangify:ver&lt;0.0.3+&gt;!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -189,6 +162,204 @@
         <JAVADOC />
         <SOURCES>
           <root url="raku://1166071006:Slangify:ver&lt;0.0.4+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Log::Async" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Log::Async!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Hash::Merge" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Hash::Merge!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="LLM::Prompts" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:LLM::Prompts!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Text::SubParsers:ver&lt;0.1.1+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Text::SubParsers:ver&lt;0.1.1+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="OO::Monitors" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:OO::Monitors!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="WWW::Gemini:ver&lt;0.0.20+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:WWW::Gemini:ver&lt;0.0.20+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="WWW::MistralAI:ver&lt;0.1.3+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:WWW::MistralAI:ver&lt;0.1.3+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="runtime =&gt; {&quot;requires&quot;:[&quot;Slangify:ver&lt;0.0.4+&gt;:auth&lt;zef:lizmat&gt;&quot;]}" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:runtime =&gt; {&quot;requires&quot;:[&quot;Slangify:ver&lt;0.0.4+&gt;:auth&lt;zef:lizmat&gt;&quot;]}!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="WWW::PaLM:ver&lt;0.1.9+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:WWW::PaLM:ver&lt;0.1.9+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="XDG::BaseDirectory:ver&lt;0.0.13+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:XDG::BaseDirectory:ver&lt;0.0.13+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Terminal::ANSI" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Terminal::ANSI!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="HTTP::Tiny:ver&lt;0.2.5+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:HTTP::Tiny:ver&lt;0.2.5+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="runtime =&gt; {&quot;requires&quot;:[&quot;File::Directory::Tree:ver&lt;0.2+&gt;:auth&lt;zef:raku-community-modules&gt;&quot;]}" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:runtime =&gt; {&quot;requires&quot;:[&quot;File::Directory::Tree:ver&lt;0.2+&gt;:auth&lt;zef:raku-community-modules&gt;&quot;]}!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="LLM::DWIM" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:LLM::DWIM!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="WWW::LLaMA:ver&lt;0.1.3+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:WWW::LLaMA:ver&lt;0.1.3+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Terminal::ANSI::OO" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Terminal::ANSI::OO!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Fast:ver&lt;0.17+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Fast:ver&lt;0.17+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Fast:ver&lt;0.19+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Fast:ver&lt;0.19+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Fast" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Fast!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="TOML" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:TOML!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="WWW::OpenAI:ver&lt;0.3.8+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:WWW::OpenAI:ver&lt;0.3.8+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="LLM::Functions" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:LLM::Functions!/" />
         </SOURCES>
       </library>
     </orderEntry>
