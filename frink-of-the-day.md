@@ -41,9 +41,9 @@ crag 'say ^<2 tonne> / (3.3m * 4m * ^<1000 kg/m^3>)'
 ## Liquor
 ```
 #beer = 12 floz 3.2 percent water/alcohol
-crag 'say (^<1 pint> * ^<4 %>).in("alcohol-unit")'
+(^<1 pint> * ^<4 %>).in("alcohol-unit")
  
-crag 'say (330ml * 4%).in("alcohol-unit")'   <=== note % #FIXME 
+(330ml * 4%).in("alcohol-unit")   <=== note % #FIXME 
 
 #magnum 13.5 percent -> beer
 crag 'say (^<1 magnum> * ^<13.5 %>).in("alcohol-unit")'
@@ -63,6 +63,17 @@ crag '$jj=(1.75l * ^<190 us-proof> / ^<5 us-gallon>); $beer=(^<12 floz> * ^<4 %>
 
 #keg -> 12 floz (locale dependent)
 ^<1 keg> / ^<12 floz>
+
+#(60 dollars)/(keg 3.2 percent water/alcohol) -> "dollars/floz"
+(^<60 dollars> / (^<1 keg> * ^<4 %>)).in: 'dollars/alcohol-unit'
+-or, in metric-
+(10$ / (1l * ^<4 %>)).in: '$/alcohol-unit'
+
+#(6.99 dollars)/(winebottle 13 percent) -> "dollars/floz"
+(^<6 dollars> / (^<1 bottle> * ^<13 percent>)).in: 'dollars/alcohol-unit'
+
+#(13.99 dollars)/(1750 ml 80 proof) -> "dollars/alcohol-unit"
+(^<13.99 dollars> / (^<1750 ml> * ^<80 us-proof>)).in: 'dollars/alcohol-unit'
 ```
 
 ## Movie Magic
