@@ -51,7 +51,6 @@ Examples:
 - https://github.com/librasteve/raku-Physics-Unit.git
 - https://github.com/librasteve/raku-Physics-Error.git
 - https://github.com/librasteve/raku-Physics-Constants.git
-- https://github.com/raku-community-modules/Time-Duration-Parser
 - https://github.com/raku-community-modules/Slang-Roman
 - https://github.com/bduggan/raku-llm-dwim
 
