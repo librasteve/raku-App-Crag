@@ -5,7 +5,6 @@ use Slang::NumberBase;
 use Physics::Measure :ALL;
 use Physics::Vector;
 use Physics::Constants;
-use Chemistry::Stoichiometry;
 use CodeUnit:ver<0.0.6+>:auth<zef:lizmat>;
 use Prompt:ver<0.0.10+>:auth<zef:lizmat>;
 use LLM::DWIM;
@@ -108,7 +107,6 @@ More info:
     - https://github.com/librasteve/raku-Physics-Error.git
     - https://github.com/librasteve/raku-Physics-Constants.git
     - https://github.com/raku-community-modules/Slang-Roman
-    - https://github.com/antononcube/Raku-Chemistry-Stoichiometry
     - https://github.com/bduggan/raku-llm-dwim
 - crag goes '^<...>' => '♎️<...>' )
 - crag goes sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }
