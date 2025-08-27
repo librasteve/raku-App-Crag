@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.29>:auth<zef:librasteve>;
+unit module App::Crag:ver<0.0.30>:auth<zef:librasteve>;
 
 use Slang::Roman;
 use Slang::NumberBase;
@@ -12,9 +12,10 @@ use LLM::DWIM;
 #- helper subs / ops -----------------------------------------------------------
 sub r( $x ) { $Physics::Measure::round-val = $x }
 
-multi prefix:<^>(Str:D $str) {
-    ♎️"$str";
-}
+# now provided by Physics::Measure
+#multi prefix:<^>(Str:D $str) {
+#    ♎️"$str";
+#}
 multi prefix:<^>(List:D $new where $new.head ~~ Real) {
     my $str = $new.join(' ');
     ♎️"$str";
