@@ -35,8 +35,6 @@ $s=^(0rXL,"mph"); $d=^(0rMM,"ft"); "lap-time {$d/$s}"
 $fd = ^"{[+] <3 1/2>} in"; "Fits on a $fd floppy disk."  #texas fractions
 $fd = ^<§|3½| in>; "Fits on a $fd floppy disk."  #unicode fractions
 2**63-1
-molecular-mass("SO2")
-"chemical-element-data(Cl);"
 #https://tos.org/oceanography/article/is-the-atlantic-overturning-circulation-approaching-a-tipping-point
 (50km * 0.5km * ^<2 m/s>).in("sverdrup")
 (^<27 cubic hectometer per sec>).in("sverdrup")
@@ -73,4 +71,5 @@ $voyager = ^<35 km/s>
 ( 51g * ?^<TNT energy in J/kg> ) / ( 91kg * g )
 ?^<ein und zwanzig in ①>
 (10$ / (1l * ^<4 %>)).in: '$/alcohol-unit'
+?^<molecular-mass of SO2 in grams per mole>
 ```
