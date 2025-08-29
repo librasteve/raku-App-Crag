@@ -16,6 +16,7 @@ sub r( $x ) { $Physics::Measure::round-val = $x }
 #multi prefix:<^>(Str:D $str) {
 #    ♎️"$str";
 #}
+# roadmap is to to the same with these
 multi prefix:<^>(List:D $new where $new.head ~~ Real) {
     my $str = $new.join(' ');
     ♎️"$str";
@@ -70,11 +71,15 @@ my sub eval-me(Str() $cmd) is export {
 }
 
 my sub run-cmd(Str:D $cmd --> Nil) {
-    if $cmd {
-        my $out   := $*OUT.tell;
-        my $value := eval-me($cmd);
-        say $value if $*OUT.tell == $out;
+    try {
+        if $cmd {
+            my $out   := $*OUT.tell;
+            my $value := eval-me($cmd);
+            say $value if $*OUT.tell == $out;
+        }
     }
+#    if $! { say "Error: " ~ $!.^name ~ " «" ~ $!.message ~ "»" }
+    with $! { say "Error: " ~ .^name ~ " «" ~ .message ~ "»" }
 }
 
 #- script logic ----------------------------------------------------------------
