@@ -85,9 +85,10 @@ my sub run-cmd(Str:D $cmd --> Nil) {
 my proto sub MAIN (|) is export(:MAIN) {*}
 my multi sub MAIN () {
 
-    my $prompt = Prompt.new(:history($*HOME.add("crag.history")));
+    my $prompt = Prompt.new(:history($*HOME.add(".crag.history")));
     loop {
         last without my $line = $prompt.readline("> ");
+        last if $line eq 'exit';
         run-cmd($line);
     }
     $prompt.save-history;
@@ -113,11 +114,11 @@ More info:
     - https://github.com/librasteve/raku-Physics-Constants.git
     - https://github.com/raku-community-modules/Slang-Roman
     - https://github.com/bduggan/raku-llm-dwim
-- crag goes '^<...>' => '♎️<...>' )
+- crag goes '^<value units>' => 'Physics::Measure.new: :$value, :$units' )
 - crag goes sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }
 - crag goes ```subst( '§|(.+?)|' => 'Q|$0|.AST.EVAL' )```
-- crag goes '?<...>' => dwim )
-- crag goes '?^<...>' => dwim => '♎️<...>' )
+- crag goes '?<something>' => dwim )
+- crag goes '?^<something in units>' => dwim => 'Physics::Measure.new: value => dwim, :$units' )
 - echo RAKULANG='en_US' for us gallons, pints, mpg, etc.
 HELP
 }

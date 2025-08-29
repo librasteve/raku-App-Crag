@@ -20,12 +20,13 @@ crag [--help] <cmd>
 ```raku
 crag
 ```
+_use 'exit' to exit the REPL_
 
 For LLM::DWIM features, you will need e.g. a [Gemini App Key](https://ai.google.dev/gemini-api/docs/api-key)
 
 ## Examples
 ```
-Usage:
+UUsage:
     crag [--help] <cmd>
     -or-
     crag -> REPL
@@ -37,12 +38,18 @@ Examples:
     [5] $c=^<37 °C>; $f=^<98.6 °F>; $f cmp $c    #Same
     [6] @physics-constants-symbols.join: "\n"    # ...
     [7] ?^<TNT energy in J/kg>                   #4184000J/kg
-
-- crag goes '^<...>' => '♎️<...>' )
+More info:
+    - https://github.com/librasteve/raku-Physics-Measure.git
+    - https://github.com/librasteve/raku-Physics-Unit.git
+    - https://github.com/librasteve/raku-Physics-Error.git
+    - https://github.com/librasteve/raku-Physics-Constants.git
+    - https://github.com/raku-community-modules/Slang-Roman
+    - https://github.com/bduggan/raku-llm-dwim
+- crag goes '^<value units>' => 'Physics::Measure.new: :$value, :$units' )
 - crag goes sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }
-- crag goes subst( '§|(.+?)|' => 'Q|$0|.AST.EVAL' )
-- crag goes '?<...>' => dwim )
-- crag goes '?^<...>' => dwim => '♎️<...>' )
+- crag goes ```subst( '§|(.+?)|' => 'Q|$0|.AST.EVAL' )```
+- crag goes '?<something>' => dwim )
+- crag goes '?^<something in units>' => dwim => 'Physics::Measure.new: value => dwim, :$units' )
 - echo RAKULANG='en_US' for us gallons, pints, mpg, etc.
 ```
 
