@@ -78,7 +78,6 @@ my sub run-cmd(Str:D $cmd --> Nil) {
             say $value if $*OUT.tell == $out;
         }
     }
-#    if $! { say "Error: " ~ $!.^name ~ " «" ~ $!.message ~ "»" }
     with $! { say "Error: " ~ .^name ~ " «" ~ .message ~ "»" }
 }
 
