@@ -12,7 +12,6 @@
         "Physics::Vector",
         "Slang::Roman",
         "Slang::NumberBase",
-        "Chemistry::Stoichiometry",
         "CodeUnit:ver<0.0.6+>:auth<zef:lizmat>",
         "Prompt:ver<0.0.10+>:auth<zef:lizmat>",
         "LLM::DWIM"
