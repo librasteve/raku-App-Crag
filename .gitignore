@@ -13,4 +13,4 @@
 .gz
 .xml
 .iml
-.idea
+.idea/*
