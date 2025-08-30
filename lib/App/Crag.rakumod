@@ -84,7 +84,6 @@ my sub run-cmd(Str:D $cmd --> Nil) {
 #- script logic ----------------------------------------------------------------
 my proto sub MAIN (|) is export(:MAIN) {*}
 my multi sub MAIN () {
-
     my $prompt = Prompt.new(:history($*HOME.add(".crag.history")));
     loop {
         last without my $line = $prompt.readline("> ");
