@@ -74,4 +74,5 @@ $voyager = ^<35 km/s>
 ?^<molecular-mass of SO2 in grams per mole>
 ?^<5 days 4 hours 52 minutes 3 seconds in s>
 ?^<elephant mass in kg> / ?^<mouse mass in kg>
+US$42 .in: <£>
 ```
