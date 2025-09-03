@@ -12,5 +12,5 @@
 .pem
 .gz
 .xml
-.iml
+*.iml
 .idea/*
