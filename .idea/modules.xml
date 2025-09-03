@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/raku-App-Crag.iml" filepath="$PROJECT_DIR$/.idea/raku-App-Crag.iml" />
+      <module fileurl="file://$PROJECT_DIR$/raku-App-Crag.iml" filepath="$PROJECT_DIR$/raku-App-Crag.iml" />
     </modules>
   </component>
 </project>
