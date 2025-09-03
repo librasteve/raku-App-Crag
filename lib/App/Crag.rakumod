@@ -55,7 +55,7 @@ my $context := context;
 my $cu      := CodeUnit.new(:lang(BEGIN $*LANG), :$context, :multi-line-ok);
 
 #- actual evaluation -----------------------------------------------------------
-my sub eval-me(Str() $cmd) is export {
+sub eval-me(Str() $cmd) is export {
     $Physics::Measure::number-comma = '';
     $Physics::Measure::round-val = 0.01;
 
@@ -70,7 +70,7 @@ my sub eval-me(Str() $cmd) is export {
     $value
 }
 
-my sub run-cmd(Str:D $cmd --> Nil) {
+sub run-cmd(Str:D $cmd --> Nil) is export {
     try {
         if $cmd {
             my $out   := $*OUT.tell;
@@ -82,8 +82,8 @@ my sub run-cmd(Str:D $cmd --> Nil) {
 }
 
 #- script logic ----------------------------------------------------------------
-my proto sub MAIN (|) is export(:MAIN) {*}
-my multi sub MAIN () {
+proto sub MAIN (|) is export(:MAIN) {*}
+multi sub MAIN () {
     my $prompt = Prompt.new(:history($*HOME.add(".crag.history")));
     loop {
         last without my $line = $prompt.readline("> ");
@@ -92,7 +92,7 @@ my multi sub MAIN () {
     }
     $prompt.save-history;
 }
-my multi sub MAIN(Bool :$help!) {
+multi sub MAIN(Bool :$help!) {
     say q:to/HELP/;
 Usage:
     crag [--help] <cmd>
@@ -124,7 +124,7 @@ More info:
 HELP
 }
 
-my multi sub MAIN(Str() $cmd) {
+multi sub MAIN(Str() $cmd) {
     run-cmd($cmd);
 }
 
