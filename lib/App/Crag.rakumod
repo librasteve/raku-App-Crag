@@ -106,6 +106,7 @@ Examples:
     [5] $c=^<37 °C>; $f=^<98.6 °F>; $f cmp $c    #Same
     [6] @physics-constants-symbols.join: "\n"    # ...
     [7] ?^<TNT energy in J/kg>                   #4184000J/kg
+    [8] US$42 .in: <£>                           #31.41GBP
 More info:
     - https://github.com/librasteve/raku-Physics-Measure.git
     - https://github.com/librasteve/raku-Physics-Unit.git
@@ -119,6 +120,7 @@ More info:
 - crag goes '?<something>' => dwim )
 - crag goes '?^<something in units>' => dwim => 'Physics::Measure.new: value => dwim, :$units' )
 - echo RAKULANG='en_US' for us gallons, pints, mpg, etc.
+- zef install Physics::Units --force-install to refresh currency rates
 HELP
 }
 
