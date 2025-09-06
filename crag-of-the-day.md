@@ -75,4 +75,5 @@ $voyager = ^<35 km/s>
 ?^<5 days 4 hours 52 minutes 3 seconds in s>
 ?^<elephant mass in kg> / ?^<mouse mass in kg>
 US$42 .in: <£>
+(32GiB / US$80) / (64Kib / US$7)
 ```
