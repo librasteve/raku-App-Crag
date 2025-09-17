@@ -76,4 +76,7 @@ $voyager = ^<35 km/s>
 ?^<elephant mass in kg> / ?^<mouse mass in kg>
 US$42 .in: <£>
 (32GiB / US$80) / (64Kib / US$7)
+%emissions-per-capita<NL> = ^<6.56 tonnes / year>
+%emissions-per-capita<US> = ^<14.3 tonnes / year>
+{ .<US> / .<NL> } given %emissions-per-capita
 ```
