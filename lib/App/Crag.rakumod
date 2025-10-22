@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.34>:auth<zef:librasteve>;
+unit module App::Crag:ver<0.0.35>:auth<zef:librasteve>;
 
 use Slang::Roman;
 use Slang::NumberBase;
@@ -16,7 +16,7 @@ sub r( $x ) { $Physics::Measure::round-val = $x }
 #multi prefix:<^>(Str:D $str) {
 #    ♎️"$str";
 #}
-# roadmap is to to the same with these
+# roadmap is to also migrate these multis to Physics::Measure
 multi prefix:<^>(List:D $new where $new.head ~~ Real) {
     my $str = $new.join(' ');
     ♎️"$str";
@@ -33,7 +33,7 @@ multi prefix:<?>(List:D $new) {
 }
 
 sub dwim-to-measure(Str $new) {
-    my $preamble = 'what is the ';
+    my $preamble  = 'what is the ';
     my $postamble = ' just give me a decimal number, if exponential use simple e notation with no spaces, always omit the units';
 
     $new ~~ / 'in' \s+ (.+) $ /;
@@ -59,9 +59,11 @@ sub eval-me(Str() $cmd) is export {
     $Physics::Measure::number-comma = '';
     $Physics::Measure::round-val = 0.01;
 
-    my $value := $cu.eval('no strict; ' ~ $cmd
-      .subst(/ '§|' (<-[|]>+) '|' /, { fraction($0) }, :g)
-      .subst(/ (\w) '^' ([\D|$]) /, { "$0\c[Combining Right Arrow Above]$1" }, :g)
+    my $value := $cu.eval(
+        'no strict; ' ~
+        $cmd
+        .subst(/ '§|' (<-[|]>+) '|' /, { fraction($0) }, :g)
+        .subst(/ (\w) '^' ([\D|$]) /, { "$0\c[Combining Right Arrow Above]$1" }, :g)
     );
     with $cu.exception {
         .say;
@@ -84,6 +86,9 @@ sub run-cmd(Str:D $cmd --> Nil) is export {
 #- script logic ----------------------------------------------------------------
 proto sub MAIN (|) is export(:MAIN) {*}
 multi sub MAIN () {
+    # Redirect STDERR to /dev/null
+    $*ERR = '/dev/null'.IO.open(:w);
+
     my $prompt = Prompt.new(:history($*HOME.add(".crag.history")));
     loop {
         last without my $line = $prompt.readline("> ");
