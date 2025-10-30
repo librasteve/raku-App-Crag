@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.35>:auth<zef:librasteve>;
+unit module App::Crag:ver<0.0.36>:auth<zef:librasteve>;
 
 use Slang::Roman;
 use Slang::NumberBase;
@@ -10,7 +10,10 @@ use Prompt:ver<0.0.10+>:auth<zef:lizmat>;
 use LLM::DWIM;
 
 #- helper subs / ops -----------------------------------------------------------
-sub r( $x ) { $Physics::Measure::round-val = $x }
+
+# persist rounding at repl session level
+my $round-val = 0.01;
+sub r( $x ) { $round-val = $x }
 
 # now provided by Physics::Measure
 #multi prefix:<^>(Str:D $str) {
@@ -57,7 +60,7 @@ my $cu      := CodeUnit.new(:lang(BEGIN $*LANG), :$context, :multi-line-ok);
 #- actual evaluation -----------------------------------------------------------
 sub eval-me(Str() $cmd) is export {
     $Physics::Measure::number-comma = '';
-    $Physics::Measure::round-val = 0.01;
+    $Physics::Measure::round-val = $round-val;
 
     my $value := $cu.eval(
         'no strict; ' ~
@@ -69,7 +72,12 @@ sub eval-me(Str() $cmd) is export {
         .say;
         $cu.exception = Nil;
     }
-    $value
+
+    if $value ~~ Numeric && $round-val.defined {
+        $value.round: $round-val;
+    } else {
+        $value;
+    }
 }
 
 sub run-cmd(Str:D $cmd --> Nil) is export {
