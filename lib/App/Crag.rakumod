@@ -39,8 +39,13 @@ sub dwim-to-measure(Str $new) {
     my $preamble  = 'what is the ';
     my $postamble = ' just give me a decimal number, if exponential use simple e notation with no spaces, always omit the units';
 
-    $new ~~ / 'in' \s+ (.+) $ /;
-    my $units = ~$0 or return 'please use the form ?^<llm query in units>';
+    my $units;
+
+    if $new ~~ / 'in' \s+ (.+) $ / {
+        $units = ~$0
+    } else {
+        $units = '①';
+    }
 
     my $value = chomp dwim $preamble ~ $new ~ $postamble;
 
@@ -76,11 +81,18 @@ sub eval-me(Str() $cmd) is export {
         $cu.exception = Nil;
     }
 
+    # save value as previous
     if $value ~~ Measure {
+        # reconstitute Measure as string
         my $error = ' ±' ~ $_ with $value.error // '';
         $previous = '♎️<' ~ $value.value ~ ' ' ~ $value.units ~ $error ~ '>';
     } else {
         $previous = $value;
+    }
+
+    # make small Rats Nums so that significant digits are shown
+    if $value ~~ Measure && $round-val.defined && $value.value < $round-val {
+        $value .= Num
     }
 
     if $value ~~ Numeric && $round-val.defined {
