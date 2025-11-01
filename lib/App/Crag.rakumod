@@ -75,7 +75,13 @@ sub eval-me(Str() $cmd) is export {
         .say;
         $cu.exception = Nil;
     }
-    $previous = $value;
+
+    if $value ~~ Measure {
+        my $error = ' ±' ~ $_ with $value.error // '';
+        $previous = '♎️<' ~ $value.value ~ ' ' ~ $value.units ~ $error ~ '>';
+    } else {
+        $previous = $value;
+    }
 
     if $value ~~ Numeric && $round-val.defined {
         $value.round: $round-val;
