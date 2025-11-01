@@ -56,6 +56,7 @@ sub fraction(Str() $x) { $x.subst(/<ws>/, :g).AST.EVAL }
 #- setting up evaluation construct ---------------------------------------------
 my $context := context;
 my $cu      := CodeUnit.new(:lang(BEGIN $*LANG), :$context, :multi-line-ok);
+my $previous;
 
 #- actual evaluation -----------------------------------------------------------
 sub eval-me(Str() $cmd) is export {
@@ -63,15 +64,18 @@ sub eval-me(Str() $cmd) is export {
     $Physics::Measure::round-val = $round-val;
 
     my $value := $cu.eval(
-        'no strict; ' ~
+        'no strict;' ~
         $cmd
-        .subst(/ '§|' (<-[|]>+) '|' /, { fraction($0) }, :g)
-        .subst(/ (\w) '^' ([\D|$]) /, { "$0\c[Combining Right Arrow Above]$1" }, :g)
+        .subst(/ '$_' /, { $previous }, :g)                                             # $_ topic is previous value
+        .subst(/(\d+)'!'/, { [*] [1..$0] }, :g)                                         # ! for factorials
+        .subst(/ '§|' (<-[|]>+) '|' /, { fraction($0) }, :g)                            # § for fractions
+        .subst(/ (\w) '^' ([\D|$]) /, { "$0\c[Combining Right Arrow Above]$1" }, :g)    # ^ for vector notation
     );
     with $cu.exception {
         .say;
         $cu.exception = Nil;
     }
+    $previous = $value;
 
     if $value ~~ Numeric && $round-val.defined {
         $value.round: $round-val;
