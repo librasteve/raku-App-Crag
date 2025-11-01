@@ -90,11 +90,6 @@ sub eval-me(Str() $cmd) is export {
         $previous = $value;
     }
 
-    # make small Rats Nums so that significant digits are shown
-    if $value ~~ Measure && $round-val.defined && $value.value < $round-val {
-        $value .= Num
-    }
-
     if $value ~~ Numeric && $round-val.defined {
         $value.round: $round-val;
     } else {
