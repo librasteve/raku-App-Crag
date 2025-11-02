@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.37>:auth<zef:librasteve>;
+unit module App::Crag:ver<0.0.38>:auth<zef:librasteve>;
 
 use Slang::Roman;
 use Slang::NumberBase;
@@ -67,6 +67,7 @@ my $previous;
 sub eval-me(Str() $cmd) is export {
     $Physics::Measure::number-comma = '';
     $Physics::Measure::round-val = $round-val;
+    $Physics::Measure::round-sig = True;
 
     my $value := $cu.eval(
         'no strict;' ~
