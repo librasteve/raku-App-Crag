@@ -65,7 +65,6 @@ my $previous;
 
 #- actual evaluation -----------------------------------------------------------
 sub eval-me(Str() $cmd) is export {
-    $Physics::Measure::number-comma = '';
     $Physics::Measure::round-val = $round-val;
     $Physics::Measure::round-sig = True;
 
@@ -91,7 +90,9 @@ sub eval-me(Str() $cmd) is export {
         $previous = $value;
     }
 
-    if $value ~~ Numeric && $round-val.defined {
+    if $value ~~ Order | Bool {
+        $value
+    } elsif $value ~~ Numeric && $round-val.defined {
         $value.round: $round-val;
     } else {
         $value;
