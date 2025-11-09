@@ -12,7 +12,7 @@ use LLM::DWIM;
 #- helper subs / ops -----------------------------------------------------------
 
 # persist rounding at repl session level
-my $round-val = 0.01;
+my $round-val = 0.001;
 sub r( $x ) { $round-val = $x }
 
 # now provided by Physics::Measure
