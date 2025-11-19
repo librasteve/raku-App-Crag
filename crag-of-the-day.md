@@ -79,4 +79,5 @@ US$42 .in: <£>
 %emissions-per-capita<NL> = ^<6.56 tonnes / year>
 %emissions-per-capita<US> = ^<14.3 tonnes / year>
 { .<US> / .<NL> } given %emissions-per-capita
+$schwartzschild-radius = 2 * G * 2e30kg / c**2
 ```
