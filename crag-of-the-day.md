@@ -22,7 +22,7 @@ r(1e-13); α
 $i=∞; $i++
 $body-temp = 36.8°C; "Healthy" if $body-temp == 36.6°C ± 3%
 "Voltage is {20A * 10kΩ}"
-$x = <௪௨>, "$x is Tamil for {+$x}." 
+$x = <௪௨>; "$x is Tamil for {+$x}." 
 ^<௪௨ mph>
 $fr-max=^<4 W/kg>; $iphone12=^<5.74 W/kg>; "stop sales in fr" if $iphone12 > $fr-max
 $tub=(1.4m * .5m * .3m); $tap=^<20 L/min>; $tub/$tap
@@ -79,5 +79,6 @@ US$42 .in: <£>
 %emissions-per-capita<NL> = ^<6.56 tonnes / year>
 %emissions-per-capita<US> = ^<14.3 tonnes / year>
 { .<US> / .<NL> } given %emissions-per-capita
-$schwartzschild-radius = 2 * G * 2e30kg / c**2
+2 * G * 2e30kg / c**2
+G * 2e30kg * 5.97e24kg / (^<1 au> / 2) ** 2
 ```
