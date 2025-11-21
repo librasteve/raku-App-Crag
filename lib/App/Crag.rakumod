@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.39>:auth<zef:librasteve>;
+unit module App::Crag:ver<0.0.40>:auth<zef:librasteve>;
 
 use Slang::Roman;
 use Slang::NumberBase;
@@ -68,16 +68,22 @@ sub eval-me(Str() $cmd) is export {
     $Physics::Measure::round-val = $round-val;
     $Physics::Measure::round-sig = True;
 
-    my $value := $cu.eval(
+    my $adjusted-cmd =
         'no strict;' ~
         $cmd
         .subst(/ '$_' /, { $previous }, :g)                                             # $_ topic is previous value
         .subst(/(\d+)'!'/, { [*] [1..$0] }, :g)                                         # ! for factorials
         .subst(/ '§|' (<-[|]>+) '|' /, { fraction($0) }, :g)                            # § for fractions
         .subst(/ (\w) '^' ([\D|$]) /, { "$0\c[Combining Right Arrow Above]$1" }, :g)    # ^ for vector notation
-    );
+    ;
+
+    my $value := $cu.eval($adjusted-cmd);
     with $cu.exception {
-        .say;
+        #no stacktrace, pack lines
+        my @ex-lines = .Str.lines;
+        say @ex-lines.shift;
+        say "\t@ex-lines[]";
+
         $cu.exception = Nil;
     }
 
