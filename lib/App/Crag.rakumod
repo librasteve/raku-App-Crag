@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.40>:auth<zef:librasteve>;
+unit module App::Crag:ver<0.0.41>:auth<zef:librasteve>;
 
 use Slang::Roman;
 use Slang::NumberBase;
@@ -81,8 +81,8 @@ sub eval-me(Str() $cmd) is export {
     with $cu.exception {
         #no stacktrace, pack lines
         my @ex-lines = .Str.lines;
-        say @ex-lines.shift;
-        say "\t@ex-lines[]";
+        say 'Error: ', @ex-lines.shift;
+        say "\t@ex-lines[]" if @ex-lines;
 
         $cu.exception = Nil;
     }
