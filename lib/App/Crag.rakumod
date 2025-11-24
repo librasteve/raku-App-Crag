@@ -41,7 +41,7 @@ sub dwim-to-measure(Str $new) {
 
     my $units;
 
-    if $new ~~ / 'in' \s+ (.+) $ / {
+    if $new ~~ / .* ' in ' (.*) $ / {
         $units = ~$0
     } else {
         $units = '①';
