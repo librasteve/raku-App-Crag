@@ -67,6 +67,7 @@ my $previous;
 sub eval-me(Str() $cmd) is export {
     $Physics::Measure::round-val = $round-val;
     $Physics::Measure::round-sig = True;
+    $*TOLERANCE = $round-val.defined ?? $round-val !! 1e-15;
 
     my $adjusted-cmd =
         'no strict;' ~
