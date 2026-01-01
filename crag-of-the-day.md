@@ -82,4 +82,5 @@ US$42 .in: <£>
 2 * G * 2e30kg / c**2
 G * 2e30kg * 5.97e24kg / (^<1 au> / 2) ** 2
 sleep 4; say "\aWake up it's {DateTime.now.hh-mm-ss}"
+{ .&exp / (1 + .&exp) }(10) =~= 1
 ```
