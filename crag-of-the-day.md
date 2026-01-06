@@ -83,4 +83,5 @@ US$42 .in: <£>
 G * 2e30kg * 5.97e24kg / (^<1 au> / 2) ** 2
 sleep 4; say "\aWake up it's {DateTime.now.hh-mm-ss}"
 { .&exp / (1 + .&exp) }(10) =~= 1
+r 1e-6; (mp / electron-mass) =~= π⁴⁵ × (1 + 2×α + α/13 − (8/9)×α²)
 ```
