@@ -1,4 +1,4 @@
-unit module App::Crag:ver<0.0.41>:auth<zef:librasteve>;
+unit module App::Crag;
 
 use Slang::Roman;
 use Slang::NumberBase;
@@ -9,6 +9,8 @@ use CodeUnit:ver<0.0.6+>:auth<zef:lizmat>;
 use Prompt:ver<0.0.10+>:auth<zef:lizmat>;
 use LLM::DWIM;
 use Math::NumberTheory;
+use Color;
+use Color::Names::CSS3:ver<1.001003> :colors;
 
 #- helper subs / ops -----------------------------------------------------------
 
@@ -59,6 +61,8 @@ multi prefix:<?^>(List:D $new) { dwim-to-measure($new.join(' ')) }
 #viz. https://github.com/Raku/problem-solving/issues/400
 sub fraction(Str() $x) { $x.subst(/<ws>/, :g).AST.EVAL }
 
+sub color(Str() $c) { 'Color.new(:rgb(COLORS<' ~ $c ~ '><rgb>))' }
+
 #- setting up evaluation construct ---------------------------------------------
 my $context := context;
 my $cu      := CodeUnit.new(:lang(BEGIN $*LANG), :$context, :multi-line-ok);
@@ -75,8 +79,9 @@ sub eval-me(Str() $cmd) is export {
         $cmd
         .subst(/ '$_' /, { $previous }, :g)                                             # $_ topic is previous value
         .subst(/(\d+)'!'/, { [*] [1..$0] }, :g)                                         # ! for factorials
-        .subst(/ '§|' (<-[|]>+) '|' /, { fraction($0) }, :g)                            # § for fractions
         .subst(/ (\w) '^' ([\D|$]) /, { "$0\c[Combining Right Arrow Above]$1" }, :g)    # ^ for vector notation
+        .subst(/ '§|' (<-[|]>+) '|' /, { fraction($0) }, :g)                            # §|| for fractions
+        .subst(/ 'c<' (<-[>]>+) '>' /, { color($0) }, :g)                               # c<> for colors
     ;
 
     my $value := $cu.eval($adjusted-cmd);
@@ -155,9 +160,12 @@ More info:
     - https://github.com/raku-community-modules/Slang-Roman
     - https://github.com/bduggan/raku-llm-dwim
     - https://github.com/antononcube/Raku-Math-NumberTheory
+    - https://github.com/raku-community-modules/Color
+    - https://github.com/holli-holzer/perl6-Color-Names
 - crag goes '^<value units [±error]>' => 'Physics::Measure.new: :$value, :$units :$error' )
 - crag goes sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }
 - crag goes ```subst( '§|(.+?)|' => 'Q|$0|.AST.EVAL' )```
+- crag goes ```subst( 'c<(.+?)>' => 'Color.new(:rgb(COLORS<$0><rgb>))' )```
 - crag goes '?<something>' => dwim )
 - crag goes '?^<something in units>' => dwim => 'Physics::Measure.new: value => dwim, :$units' )
 - echo RAKULANG='en_US' for us gallons, pints, mpg, etc.
