@@ -1,7 +1,7 @@
 {
     "name": "App::Crag",
     "description": "calculator using raku grammars",
-    "version": "0.0.44",
+    "version": "0.0.45",
     "authors": [
         "librasteve"
     ],
@@ -14,7 +14,8 @@
         "Slang::NumberBase",
         "CodeUnit:ver<0.0.6+>:auth<zef:lizmat>",
         "Prompt:ver<0.0.10+>:auth<zef:lizmat>",
-        "LLM::DWIM"
+        "LLM::DWIM",
+        "Math::NumberTheory"
     ],
     "build-depends": [],
     "provides": {
