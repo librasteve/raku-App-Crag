@@ -8,6 +8,7 @@ use Physics::Constants;
 use CodeUnit:ver<0.0.6+>:auth<zef:lizmat>;
 use Prompt:ver<0.0.10+>:auth<zef:lizmat>;
 use LLM::DWIM;
+use Math::NumberTheory;
 
 #- helper subs / ops -----------------------------------------------------------
 
