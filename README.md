@@ -64,6 +64,9 @@ More info:
 - https://github.com/librasteve/raku-Physics-Constants.git
 - https://github.com/raku-community-modules/Slang-Roman
 - https://github.com/bduggan/raku-llm-dwim
+- https://github.com/antononcube/Raku-Math-NumberTheory
+- https://github.com/raku-community-modules/Color
+- https://github.com/holli-holzer/perl6-Color-Names
 
 ### Copyright
 copyright(c) 2023-2025 Henley Cloud Consulting Ltd.
