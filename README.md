@@ -69,4 +69,4 @@ More info:
 - https://github.com/holli-holzer/perl6-Color-Names
 
 ### Copyright
-copyright(c) 2023-2025 Henley Cloud Consulting Ltd.
+copyright(c) 2023-2026 Henley Cloud Consulting Ltd.
