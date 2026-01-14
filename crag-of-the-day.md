@@ -88,4 +88,5 @@ random-prime(20..40, 3)
 8!
 c<red>.darken(10)
 (^<1 A0> * ^<80 gsm>).in: <g>
+$Isp=340s;$ve=$Isp*g;$m0=3.65Gg+200Mg+1.5Gg;$m1=200Mg+1.5Gg;$Dv=$ve*log(+($m0/$m1))  #Tsiolkovsky rocket equation
 ```
