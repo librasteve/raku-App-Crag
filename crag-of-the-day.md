@@ -87,6 +87,8 @@ r 1e-6; (mp / electron-mass) =~= π⁴⁵ × (1 + 2×α + α/13 − (8/9)×α²)
 random-prime(20..40, 3)
 8!
 c<red>.darken(10)
+$r=c<red>;$b=c<blue>;$r+$b
+$g=g<grey>; (2 * $g) cmp c<white>
 (^<1 A0> * ^<80 gsm>).in: <g>
 $Isp=340s;$ve=$Isp*g;$m0=3.65Gg+200Mg+1.5Gg;$m1=200Mg+1.5Gg;$Dv=$ve*log(+($m0/$m1))  #Tsiolkovsky rocket equation
 ```
