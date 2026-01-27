@@ -1,0 +1,95 @@
+#Basics
+> crag '0.1+0.2'    #command line
+> crag --help       #help
+> crag              #interactive
+#up/down arrows to select a previous command
+
+#Welcome to crag    #a comment
+
+#Arithmetic
+2 + 3 * 4           #bidmas precedence
+(2+3) * 4           #parentheses
+-0.1-0.2            #negatives
+(7/2) % 3           #modulo (%)
+
+#Power & Roots
+sqrt 6              #sqrt
+2**64               #power
+8**(1/3)            #root
+6!                  #factorial
+
+#Functions & Constants
+log10 1000          #log (base 10)
+exp(log e)          #natural log & exp
+asin(sin pi)        #trigonometry
+cosh 3i+4           #hyperbolics
+(10+15i).polar      #polar coords
+(10+15i) gcd (-3+2i) #Gaussian GCD
+
+#Variables & Strings
+$x=42               #assignment
+$x / 7              #persistence
+$_ * 7              #previous result
+$s="hello"; $s      #strings
+"ans is $x"         #interpolation
+$y="42"; +$y        #numification
+$y=Nil              #reset
+@a=(1,2,3)          #list
+
+#Number Types
+1.^name             #Int (big integer)
+1.424242e-7         #Num (IEEE P754 float 64)
+<2/3>               #Rat (rational fraction)
+3i+4                #Complex
+Inf                 #Infinity
+Nan                 #Not a Number
+
+#Ranges & Sequences
+"hi" xx 4           #repetition
+5..12               #range 
+|(5..12)            #flattening
+(5..12)[3]          #indexing (from 0)
+^12                 #0..11
+3,6...15            #arithmetic sequence
+1,2...16            #geometric sequence
+(0,1,*+*...Inf)[^8] #fibonacci sequence (first 8)
+
+#Rounding Modes 
+sqrt 10             #3.162 (default is 0.001)
+r 0.1; sqrt 10      #3.2   (use r ... to set)              
+r Nil; sqrt 10      #3.1622776601683795 (P754 rounding)
+floor 3.162         #floor, ceiling, abs
+
+#SI Base Units
+42m                 #metres
+10s                 #seconds
+42cm                #SI prefixes
+80kg                #kilograms
+42m / 10s           #speed in m/s (s=d/t)
+20kg * g            #weight in N (F=ma)
+$_ .in: 'lb'        #conversion (note spaces)
+$_ * 4m             #energy in J (E=Fs)
+(10m~10%)+(5m~0.2)  #error (uncertainty)
+
+#More Units & Constants
+64Mib               #data
+US$ 25              #currency
+£20 .in: 'US$'      #conversion
+39ºC .in 'ºF'       #temparature
+^<4 in>             #general syntax
+^<4 inch>           #synonyms
+^<30º10'5">         #angles (degrees)
+^<pi rad>           #angles (radians)
+^<23:59:59>         #time
+c<red>              #CSS colors
+c                   #speed of light
+Na                  #Avogadro number
+@physics-constants  #list all
+
+#LLM Queries
+?<what is an LLM>   #text query
+?^<mass of an elephant in kg> #make a unit
+
+#crag is a full raku repl - so you can write loops, conditionals, tests and so on
+#if your calculations outgrow the crag app, use can use the crag modules in raku code
+#visit https://raku.org and https://github.com/librasteve/raku-App-Crag for more
