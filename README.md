@@ -11,7 +11,7 @@ Calculator using RAku Grammars for the command line
 > rakubrew switch
 > zef install App::Crag --/test
 ```
-See https://raku.org/install for other installation options
+See https://raku.org/install for other Raku installation options
 
 ## Usage
 #### Use the `crag` command:
