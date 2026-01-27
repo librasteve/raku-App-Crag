@@ -4,10 +4,14 @@
 
 Calculator using RAku Grammars for the command line
 
-## Install
-```raku
-zef install App::Crag
+## Install (Linux)
 ```
+> curl https://rakubrew.org/install-on-perl.sh | sh
+> rakubrew download
+> rakubrew switch
+> zef install App::Crag --/test
+```
+See https://raku.org/install for other installation options
 
 ## Usage
 #### Use the `crag` command:
