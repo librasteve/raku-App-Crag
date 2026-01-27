@@ -9,6 +9,7 @@ Calculator using RAku Grammars for the command line
 > curl https://rakubrew.org/install-on-perl.sh | sh
 > rakubrew download
 > rakubrew switch
+> raku -v    #check your raku version
 > zef install App::Crag --/test
 ```
 See https://raku.org/install for other Raku installation options
