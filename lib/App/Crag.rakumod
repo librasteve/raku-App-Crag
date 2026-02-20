@@ -78,6 +78,8 @@ sub eval-me(Str() $cmd) is export {
         'no strict;' ~
         $cmd
         .subst(/ '$_' /, { $previous }, :g)                                             # $_ topic is previous value
+        .subst(/  π   /, 3.141592653589793, :g)                                            # π expansion
+        .subst(/  pi  /, 3.141592653589793, :g)                                           # pi expansion
         .subst(/(\d+)'!'/, { [*] [1..$0] }, :g)                                         # ! for factorials
         .subst(/ (\w) '^' ([\D|$]) /, { "$0\c[Combining Right Arrow Above]$1" }, :g)    # ^ for vector notation
         .subst(/ '§|' (<-[|]>+) '|' /, { fraction($0) }, :g)                            # §|| for fractions

@@ -1,7 +1,7 @@
 {
     "name": "App::Crag",
     "description": "calculator using raku grammars",
-    "version": "0.0.47",
+    "version": "0.0.48",
     "authors": [
         "librasteve"
     ],
