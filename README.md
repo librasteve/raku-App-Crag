@@ -4,6 +4,10 @@
 
 Calculator using RAku Grammars for the command line
 
+***THIS APPLICATION IS PROVDED "AS IS" WITHOUT WARRANTY OR LIABILITY.***
+
+***THIS APPLICATION IS NOT INTENDED FOR USE IN MISSION CRITICAL APPLICATIONS***
+
 ## Install (Linux)
 ```
 > curl https://rakubrew.org/install-on-perl.sh | sh
