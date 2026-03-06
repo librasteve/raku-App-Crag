@@ -4,7 +4,7 @@
 
 Calculator using RAku Grammars for the command line
 
-See [https://cragcli.info/](https://cragcli.info/) for Asciinema examples
+See [https://cragcli.info/](https://cragcli.info/) for command examples
 
 ***THIS APPLICATION IS PROVDED "AS IS" WITHOUT WARRANTY OR LIABILITY.***
 
