@@ -4,6 +4,8 @@
 
 Calculator using RAku Grammars for the command line
 
+See [https://cragcli.info/](https://cragcli.info/) for command examples
+
 ***THIS APPLICATION IS PROVDED "AS IS" WITHOUT WARRANTY OR LIABILITY.***
 
 ***THIS APPLICATION IS NOT INTENDED FOR USE IN MISSION CRITICAL APPLICATIONS***
