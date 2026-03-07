@@ -39,6 +39,8 @@ multi prefix:<?>(List:D $new) {
 }
 
 sub dwim-to-measure(Str $new) {
+    use Text::SubParsers;
+
     my $preamble  = 'what is the ';
     my $postamble = ' just give me a decimal number, if exponential use simple e notation with no spaces, always omit the units';
 
@@ -50,7 +52,9 @@ sub dwim-to-measure(Str $new) {
         $units = '①';
     }
 
-    my $value = chomp dwim $preamble ~ $new ~ $postamble;
+    my $value = trim dwim $preamble ~ $new ~ $postamble;
+    $value.subst(/','/, '', :g);
+    $value = sub-parser('Numeric').subparse($value).first(Numeric);
 
     ♎️"$value $units";
 }
