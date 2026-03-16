@@ -31,18 +31,33 @@ multi prefix:<^>(List:D $new where $new.head ~~ List) {
     Physics::Vector.new: |$new
 }
 
-multi prefix:<?>(Str:D $new) {
-    chomp dwim $new ~ 'in a short sentence'
+sub dwim-to-string(Str $new) {
+
+    my $res;
+    try {
+        $res = chomp dwim $new ~ 'in a short sentence'
+    }
+    with $! {
+        say "Error: " ~ .^name ~ " «" ~ .message ~ "»\n";
+        say "*** See https://raku.land/zef:bduggan/LLM::DWIM#configuration for info on how to setup an API key. ***\n";
+        exit;
+    }
+
+    $res;
 }
-multi prefix:<?>(List:D $new) {
-    chomp dwim $new.join('') ~ 'in a short sentence'
-}
+
+multi prefix:<?>(Str:D $new)  { dwim-to-string($new) }
+multi prefix:<?>(List:D $new) { dwim-to-string($new.join(' ')) }
 
 sub dwim-to-measure(Str $new) {
     use Text::SubParsers;
 
     my $preamble  = 'what is the ';
     my $postamble = ' just give me a decimal number, if exponential use simple e notation with no spaces, always omit the units';
+
+    if $new.match(/ ' in ' /, :g).elems >= 2 {
+        say "Note: Please use «in» once only, followed by units at the end of an «?^<...>» query.";
+    }
 
     my $units;
 
@@ -52,9 +67,17 @@ sub dwim-to-measure(Str $new) {
         $units = '①';
     }
 
-    my $value = trim dwim $preamble ~ $new ~ $postamble;
-    $value.subst(/','/, '', :g);
-    $value = sub-parser('Numeric').subparse($value).first(Numeric);
+    my $value;
+    try {
+        $value = trim dwim $preamble ~ $new ~ $postamble;
+        $value.subst(/','/, '', :g);
+        $value = sub-parser('Numeric').subparse($value).first(Numeric);
+    }
+    with $! {
+        say "Error: " ~ .^name ~ " «" ~ .message ~ "»\n";
+        say "*** See https://raku.land/zef:bduggan/LLM::DWIM#configuration for info on how to setup an API key. ***\n";
+        exit;
+    }
 
     ♎️"$value $units";
 }
@@ -127,7 +150,13 @@ sub run-cmd(Str:D $cmd --> Nil) is export {
             say $value if $*OUT.tell == $out;
         }
     }
-    with $! { say "Error: " ~ .^name ~ " «" ~ .message ~ "»" }
+    with $! {
+        if $! ~~ X::Numeric::DivideByZero {
+            say Inf
+        } else {
+            die "Error: " ~ $!.^name ~ " «" ~ $!.message ~ "»"
+        }
+    }
 }
 
 #- script logic ----------------------------------------------------------------
