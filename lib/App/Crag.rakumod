@@ -15,7 +15,7 @@ use Color::Names::CSS3:ver<1.001003> :colors;
 #- helper subs / ops -----------------------------------------------------------
 
 # persist rounding at repl session level
-my $round-val = 0.001;
+my $round-val = 0.01;
 sub r( $x ) { $round-val = $x }
 
 # now provided by Physics::Measure
