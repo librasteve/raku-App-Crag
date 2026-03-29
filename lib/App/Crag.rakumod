@@ -27,7 +27,6 @@ sub f( $x ) { $fraction-mode = $x.so }
 subset Proper of List where $_ == 2 && $_[0] ~~ Int && $_[1] ~~ Rat;
 
 multi prefix:<^>(Proper:D $new) {
-    say 42;
     return 'Proper fraction: first term should be Int.' unless $new[0] ~~ Int;
     return 'Proper fraction: second term should be <1.' unless $new[1].abs < 1;
 
@@ -40,7 +39,7 @@ sub rat-out(Rat $r) {
     my $whole = $nu div $de;
     my $rem   = $nu mod $de;
 
-    if $whole {
+    if $whole && $rem {
         "^<$whole $rem/$de>";
     } else {
         "<$nu/$de>";
