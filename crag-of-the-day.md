@@ -32,8 +32,6 @@ r(0); "boltzmann-constant is: ", k
 $circus-maximus-lap = ^<2000 ft>; $laps = 7; $circus-maximus-lap * $laps;
 $chariot-speed = ^<40 mph>; $race-distance = ^<14000 ft>; $race-distance / $chariot-speed;
 $s=^(0rXL,"mph"); $d=^(0rMM,"ft"); "lap-time {$d/$s}"
-$fd = ^"{[+] <3 1/2>} in"; "Fits on a $fd floppy disk."  #texas fractions
-$fd = ^<§|3½| in>; "Fits on a $fd floppy disk."  #unicode fractions
 2**63-1
 #https://tos.org/oceanography/article/is-the-atlantic-overturning-circulation-approaching-a-tipping-point
 (50km * 0.5km * ^<2 m/s>).in("sverdrup")
@@ -41,8 +39,6 @@ $fd = ^<§|3½| in>; "Fits on a $fd floppy disk."  #unicode fractions
 %vw-golf1=(:mass(800kg), :cc(1.8l),:hp(^<112 hp>),:burn(^<10 l/100km>))
 %vw-golf8=(:mass(1450kg),:cc(1.0l),:hp(^<110 hp>),:burn(^<4.6 l/100km>))
 180kW/1450kg
-^<§|10⁵/₁₂| ft> .in: <m>
-^<§|10 + ⁵/₁₂| ft> .in: <m>
 %gin<double abv cal>=(50ml,^<40 %>,^<108 cal>); %gin
 %gin<double abv cal>=(50ml,^<40 %>,^<108 cal>); (.<double> * .<abv> with %gin).in("alcohol-unit")
 %wine<medium abv>=(175ml,^<12 %>,^<136 cal>); %wine

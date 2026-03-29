@@ -14,25 +14,67 @@ use Color::Names::CSS3:ver<1.001003> :colors;
 
 #- helper subs / ops -----------------------------------------------------------
 
-# persist rounding at repl session level
+# persist rounding mode at repl session level
 my $round-val = 0.01;
 sub r( $x ) { $round-val = $x }
 
-# now provided by Physics::Measure
-#multi prefix:<^>(Str:D $str) {
+# persist fraction mode at repl session level
+my $fraction-mode = 0;
+sub f( $x ) { $fraction-mode = $x.so }
+
+# handle proper fractions of form ^<3 1/2>
+
+subset Proper of List where $_ == 2 && $_[0] ~~ Int && $_[1] ~~ Rat;
+
+multi prefix:<^>(Proper:D $new) {
+    say 42;
+    return 'Proper fraction: first term should be Int.' unless $new[0] ~~ Int;
+    return 'Proper fraction: second term should be <1.' unless $new[1].abs < 1;
+
+    [+] |$new;
+}
+
+sub rat-out(Rat $r) {
+    my ($nu,$de) = $r.nude;
+
+    my $whole = $nu div $de;
+    my $rem   = $nu mod $de;
+
+    if $whole {
+        "^<$whole $rem/$de>";
+    } else {
+        "<$nu/$de>";
+    }
+}
+
+# ^ prefix to pick out Measure literals
+
+#multi prefix:<^>(Str:D $str) {  # now provided by Physics::Measure
 #    ♎️"$str";
 #}
 # roadmap is to also migrate these multis to Physics::Measure
 multi prefix:<^>(List:D $new where $new.head ~~ Real) {
     my $str = $new.join(' ');
-    ♎️"$str";
+    my $res;
+
+    try {
+        $res = ♎️"$str";
+    }
+    with $! {
+        "Error: " ~ $!.^name ~ " «" ~ $!.message ~ "»"
+    } else {
+        $res;
+    }
+
 }
 multi prefix:<^>(List:D $new where $new.head ~~ List) {
     Physics::Vector.new: |$new
 }
 
-sub dwim-to-string(Str $new) {
 
+# ? prefix to pick out LLM queries
+
+sub dwim-to-string(Str $new) {
     my $res;
     try {
         $res = chomp dwim $new ~ 'in a short sentence'
@@ -40,7 +82,7 @@ sub dwim-to-string(Str $new) {
     with $! {
         say "Error: " ~ .^name ~ " «" ~ .message ~ "»\n";
         say "*** See https://raku.land/zef:bduggan/LLM::DWIM#configuration for info on how to setup an API key. ***\n";
-        exit;
+        return;
     }
 
     $res;
@@ -79,14 +121,20 @@ sub dwim-to-measure(Str $new) {
         exit;
     }
 
-    ♎️"$value $units";
+    my $res;
+    try {
+        $res = ♎️"$value $units";
+    }
+    with $! {
+        "Error: " ~ $!.^name ~ " «" ~ $!.message ~ "»"
+    } else {
+        $res
+    }
 }
 
 multi prefix:<?^>(Str:D  $new) { dwim-to-measure($new) }
 multi prefix:<?^>(List:D $new) { dwim-to-measure($new.join(' ')) }
 
-#viz. https://github.com/Raku/problem-solving/issues/400
-sub fraction(Str() $x) { $x.subst(/<ws>/, :g).AST.EVAL }
 
 sub color(Str() $c) { 'Color.new(:rgb(COLORS<' ~ $c ~ '><rgb>))' }
 
@@ -110,7 +158,6 @@ sub eval-me(Str() $cmd) is export {
         .subst(/ (^|'<'|\s) <(e)>  ($|'>'|\s) /, 2.718281828459045, :g)                 # e expansion
         .subst(/(\d+)'!'/, { [*] [1..$0] }, :g)                                         # ! for factorials
         .subst(/ (\w) '^' ([\D|$]) /, { "$0\c[Combining Right Arrow Above]$1" }, :g)    # ^ for vector notation
-        .subst(/ '§|' (<-[|]>+) '|' /, { fraction($0) }, :g)                            # §|| for fractions
         .subst(/ 'c<' (<-[>]>+) '>' /, { color($0) }, :g)                               # c<> for colors
     ;
 
@@ -129,12 +176,16 @@ sub eval-me(Str() $cmd) is export {
         # reconstitute Measure as string
         my $error = ' ±' ~ $_ with $value.error // '';
         $previous = '♎️<' ~ $value.value ~ ' ' ~ $value.units ~ $error ~ '>';
+    } elsif $value ~~ Rat && $fraction-mode {
+        $previous = $value.&rat-out;
     } else {
         $previous = $value;
     }
 
     if $value ~~ Order | Bool {
-        $value
+        $value;
+    } elsif $value ~~ Rat && $fraction-mode {
+        $value.&rat-out;
     } elsif $value ~~ Numeric && $round-val.defined {
         $value.round: $round-val;
     } else {
@@ -154,7 +205,7 @@ sub run-cmd(Str:D $cmd --> Nil) is export {
         if $! ~~ X::Numeric::DivideByZero {
             say Inf
         } else {
-            die "Error: " ~ $!.^name ~ " «" ~ $!.message ~ "»"
+            say "Error: " ~ $!.^name ~ " «" ~ $!.message ~ "»"
         }
     }
 }
@@ -163,7 +214,7 @@ sub run-cmd(Str:D $cmd --> Nil) is export {
 proto sub MAIN (|) is export(:MAIN) {*}
 multi sub MAIN () {
     # Redirect STDERR to /dev/null
-    $*ERR = '/dev/null'.IO.open(:w);
+    #$*ERR = '/dev/null'.IO.open(:w);    #iamerejh
 
     my $prompt = Prompt.new(:history($*HOME.add(".crag.history")));
     loop {
@@ -200,7 +251,6 @@ More info:
     - https://github.com/holli-holzer/perl6-Color-Names
 - crag goes '^<value units [±error]>' => 'Physics::Measure.new: :$value, :$units :$error' )
 - crag goes sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }
-- crag goes ```subst( '§|(.+?)|' => 'Q|$0|.AST.EVAL' )```
 - crag goes ```subst( 'c<(.+?)>' => 'Color.new(:rgb(COLORS<$0><rgb>))' )```
 - crag goes '?<something>' => dwim )
 - crag goes '?^<something in units>' => dwim => 'Physics::Measure.new: value => dwim, :$units' )

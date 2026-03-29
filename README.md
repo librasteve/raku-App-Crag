@@ -60,7 +60,6 @@ More info:
     - https://github.com/holli-holzer/perl6-Color-Names
 - crag goes '^<value units [±error]>' => 'Physics::Measure.new: :$value, :$units :$error' )
 - crag goes sub r( $x = 0.01 ) { $Physics::Measure::round-val = $x }
-- crag goes ```subst( '§|(.+?)|' => 'Q|$0|.AST.EVAL' )```
 - crag goes ```subst( 'c<(.+?)>' => 'Color.new(:rgb(COLORS<$0><rgb>))' )```
 - crag goes '?<something>' => dwim )
 - crag goes '?^<something in units>' => dwim => 'Physics::Measure.new: value => dwim, :$units' )
