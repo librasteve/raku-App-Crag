@@ -52,30 +52,11 @@ sub rat-out(Rat $r) {
     }
 }
 
-# ^ prefix to pick out Measure literals
+# ^ prefix to pick out Vector literals
 
-#multi prefix:<^>(Str:D $str) {  # now provided by Physics::Measure
-#    ♎️"$str";
-#}
-# roadmap is to also migrate these multis to Physics::Measure
-multi prefix:<^>(List:D $new where $new.head ~~ Real) {
-    my $str = $new.join(' ');
-    my $res;
-
-    try {
-        $res = ♎️"$str";
-    }
-    with $! {
-        "Error: " ~ $!.^name ~ " «" ~ $!.message ~ "»"
-    } else {
-        $res;
-    }
-
-}
 multi prefix:<^>(List:D $new where $new.head ~~ List) {
     Physics::Vector.new: |$new
 }
-
 
 # ? prefix to pick out LLM queries
 
@@ -161,7 +142,7 @@ sub eval-me(Str() $cmd) is export {
         .subst(/ (^|'<'|\s) <(π)>  ($|'>'|\s) /, 3.141592653589793, :g)                 # π expansion
         .subst(/ (^|'<'|\s) <(pi)> ($|'>'|\s) /, 3.141592653589793, :g)                 # pi expansion
         .subst(/ (^|'<'|\s) <(e)>  ($|'>'|\s) /, 2.718281828459045, :g)                 # e expansion
-        .subst(/(\d+)'!'/, { [*] [1..$0] }, :g)                                         # ! for factorials
+        .subst(/ (\d+)'!'/, { [*] [1..$0] }, :g)                                        # ! for factorials
         .subst(/ (\w) '^' ([\D|$]) /, { "$0\c[Combining Right Arrow Above]$1" }, :g)    # ^ for vector notation
         .subst(/ 'c<' (<-[>]>+) '>' /, { color($0) }, :g)                               # c<> for colors
     ;
