@@ -22,6 +22,12 @@ sub r( $x ) { $round-val = $x }
 my $fraction-mode = 0;
 sub f( $x ) { $fraction-mode = $x.so }
 
+# screen out inadvertent call to bitwise negative operator
+
+multi prefix:<+^>(List $x) {
+    return 'Error: please insert a space between + and ^<>';
+}
+
 # handle proper fractions of form ^<3 1/2>
 
 subset Proper of List where $_ == 2 && $_[0] ~~ Int && $_[1] ~~ Rat;
