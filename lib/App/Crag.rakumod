@@ -139,9 +139,11 @@ sub eval-me(Str() $cmd) is export {
         'no strict;' ~
         $cmd
         .subst(/ '$_' /, { $previous }, :g)                                             # $_ topic is previous value
-        .subst(/ (^|'<'|\s) <(π)>  ($|'>'|\s) /, 3.141592653589793, :g)                 # π expansion
-        .subst(/ (^|'<'|\s) <(pi)> ($|'>'|\s) /, 3.141592653589793, :g)                 # pi expansion
-        .subst(/ (^|'<'|\s) <(e)>  ($|'>'|\s) /, 2.718281828459045, :g)                 # e expansion
+        .subst(/ (^|'<'|\s) <(π)>   ($|'>'|\s) /, 3.141592653589793, :g)                 # π expansion
+        .subst(/ (^|'<'|\s) <(pi)>  ($|'>'|\s) /, 3.141592653589793, :g)                 # pi expansion
+        .subst(/ (^|'<'|\s) <(e)>   ($|'>'|\s) /, 2.718281828459045, :g)                 # e expansion
+        .subst(/ (^|'<'|\s) <(phi)> ($|'>'|\s) /, 1.618033988749895, :g)                 # phi expansion (golden ratio)
+        .subst(/ (^|'<'|\s) <(φ)>   ($|'>'|\s) /, 1.618033988749895, :g)                 # φ expansion (golden ratio)
         .subst(/ (\d+)'!'/, { [*] [1..$0] }, :g)                                        # ! for factorials
         .subst(/ (\w) '^' ([\D|$]) /, { "$0\c[Combining Right Arrow Above]$1" }, :g)    # ^ for vector notation
         .subst(/ 'c<' (<-[>]>+) '>' /, { color($0) }, :g)                               # c<> for colors
